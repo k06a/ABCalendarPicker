@@ -13,3 +13,7 @@ Fully configurable iOS calendar UI component with multiple layouts and smooth an
 ##Demo video
 
 [http://youtu.be/d2PGFiO_jk4](http://youtu.be/d2PGFiO_jk4)
+
+##App to try
+
+[Mr.Calendario in AppStore](http://appstore.com/mr.calendario) (not free)
