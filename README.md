@@ -2,12 +2,14 @@
 
 Fully configurable iOS calendar UI component with multiple layouts and smooth animations.
 
-Here are some screenshots of grid layouts:
+##Screenshots of grid layouts
 
-1
+![alt text](https://raw.github.com/k06a/ABCalendarPicker/master/month-grid-screenshot.png "month-grid-screenshot.png")
 
-2
+![alt text](https://raw.github.com/k06a/ABCalendarPicker/master/year-grid-screenshot.png "year-grid-screenshot.png")
 
-3
+![alt text](https://raw.github.com/k06a/ABCalendarPicker/master/20years-grid-screenshot.png "20years-grid-screenshot.png")
 
-Demo video: [http://youtu.be/d2PGFiO_jk4](http://youtu.be/d2PGFiO_jk4)
+##Demo video
+
+[http://youtu.be/d2PGFiO_jk4](http://youtu.be/d2PGFiO_jk4)
