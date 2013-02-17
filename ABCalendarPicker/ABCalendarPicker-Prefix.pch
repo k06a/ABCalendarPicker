@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'ABCalendarPicker' target in the 'ABCalendarPicker' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif

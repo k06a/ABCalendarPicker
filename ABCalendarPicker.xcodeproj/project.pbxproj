@@ -1,0 +1,782 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		25DDA8D015AA29D40049B532 /* ABCalendarPickerAll */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 25DDA8D115AA29D40049B532 /* Build configuration list for PBXAggregateTarget "ABCalendarPickerAll" */;
+			buildPhases = (
+				25DDA8D615AA29EC0049B532 /* Build Framework */,
+			);
+			dependencies = (
+				25DDA8E915AA2A860049B532 /* PBXTargetDependency */,
+				25DDA8D515AA29DF0049B532 /* PBXTargetDependency */,
+			);
+			name = ABCalendarPickerAll;
+			productName = ABCalendarPickerAll;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		2545A3E415AD723000824C30 /* TileDisabledSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 2545A3E315AD723000824C30 /* TileDisabledSelected.png */; };
+		254FD26715BDBAB900C82DF8 /* ABCalendarPickerStyleProviderProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 254FD26615BDBAB900C82DF8 /* ABCalendarPickerStyleProviderProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		254FD26B15BDBCC700C82DF8 /* ABCalendarPickerDefaultStyleProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 254FD26915BDBCC700C82DF8 /* ABCalendarPickerDefaultStyleProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		254FD26C15BDBCC700C82DF8 /* ABCalendarPickerDefaultStyleProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 254FD26A15BDBCC700C82DF8 /* ABCalendarPickerDefaultStyleProvider.m */; };
+		257E468915AF5A7900C48F75 /* TilePattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 257E468815AF5A7900C48F75 /* TilePattern.png */; };
+		259BA22315B3484000079C27 /* GradientBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 259BA22215B3484000079C27 /* GradientBar.png */; };
+		25DA123515E8DD530067F6EB /* UIMyButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 25DA123315E8DD530067F6EB /* UIMyButton.h */; };
+		25DA123615E8DD530067F6EB /* UIMyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 25DA123415E8DD530067F6EB /* UIMyButton.m */; };
+		25DDA87015AA22A80049B532 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25DDA86F15AA22A80049B532 /* Foundation.framework */; };
+		25DDA87715AA22A80049B532 /* ABCalendarPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 25DDA87615AA22A80049B532 /* ABCalendarPicker.m */; };
+		25DDA87F15AA22A80049B532 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25DDA87E15AA22A80049B532 /* SenTestingKit.framework */; };
+		25DDA88215AA22A80049B532 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25DDA86F15AA22A80049B532 /* Foundation.framework */; };
+		25DDA88515AA22A80049B532 /* libABCalendarPicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25DDA86C15AA22A80049B532 /* libABCalendarPicker.a */; };
+		25DDA88E15AA22A80049B532 /* ABCalendarPickerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 25DDA88D15AA22A80049B532 /* ABCalendarPickerTests.m */; };
+		25DDA89815AA23040049B532 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25DDA89715AA23040049B532 /* UIKit.framework */; };
+		25DDA8A515AA235C0049B532 /* ABCalendarPickerDefaultDaysProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 25DDA8A015AA235C0049B532 /* ABCalendarPickerDefaultDaysProvider.m */; };
+		25DDA8A615AA235C0049B532 /* ABCalendarPickerDefaultErasProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 25DDA8A215AA235C0049B532 /* ABCalendarPickerDefaultErasProvider.m */; };
+		25DDA8A715AA235C0049B532 /* ABCalendarPickerDefaultMonthsProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 25DDA8A415AA235C0049B532 /* ABCalendarPickerDefaultMonthsProvider.m */; };
+		25DDA8AE15AA236A0049B532 /* ABCalendarPickerDefaultSeasonedMonthsProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 25DDA8A915AA236A0049B532 /* ABCalendarPickerDefaultSeasonedMonthsProvider.m */; };
+		25DDA8AF15AA236A0049B532 /* ABCalendarPickerDefaultWeekdaysProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 25DDA8AB15AA236A0049B532 /* ABCalendarPickerDefaultWeekdaysProvider.m */; };
+		25DDA8B015AA236A0049B532 /* ABCalendarPickerDefaultYearsProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 25DDA8AD15AA236A0049B532 /* ABCalendarPickerDefaultYearsProvider.m */; };
+		25DDA8C515AA297C0049B532 /* ABCalendarPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 25DDA87415AA22A80049B532 /* ABCalendarPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		25DDA8C615AA297C0049B532 /* ABCalendarPickerDataSourceProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 25DDA89D15AA23500049B532 /* ABCalendarPickerDataSourceProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		25DDA8C715AA297C0049B532 /* ABCalendarPickerDateProviderProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 25DDA89E15AA23500049B532 /* ABCalendarPickerDateProviderProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		25DDA8C815AA297C0049B532 /* ABCalendarPickerDelegateProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 25DDA89C15AA23410049B532 /* ABCalendarPickerDelegateProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		25DDA8C915AA297C0049B532 /* ABCalendarPickerDefaultSeasonedMonthsProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 25DDA8A815AA236A0049B532 /* ABCalendarPickerDefaultSeasonedMonthsProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		25DDA8CA15AA297C0049B532 /* ABCalendarPickerDefaultWeekdaysProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 25DDA8AA15AA236A0049B532 /* ABCalendarPickerDefaultWeekdaysProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		25DDA8CB15AA297C0049B532 /* ABCalendarPickerDefaultYearsProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 25DDA8AC15AA236A0049B532 /* ABCalendarPickerDefaultYearsProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		25DDA8CC15AA297C0049B532 /* ABCalendarPickerDefaultDaysProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 25DDA89F15AA235C0049B532 /* ABCalendarPickerDefaultDaysProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		25DDA8CD15AA297C0049B532 /* ABCalendarPickerDefaultErasProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 25DDA8A115AA235C0049B532 /* ABCalendarPickerDefaultErasProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		25DDA8CE15AA297D0049B532 /* ABCalendarPickerDefaultMonthsProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 25DDA8A315AA235C0049B532 /* ABCalendarPickerDefaultMonthsProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		25DDA8DD15AA2A380049B532 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25DDA8DC15AA2A380049B532 /* CoreFoundation.framework */; };
+		25DDA8ED15AA2A910049B532 /* TileNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 25DDA8B615AA23C20049B532 /* TileNormal.png */; };
+		25DDA8EE15AA2A910049B532 /* TileSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 25DDA8B715AA23C20049B532 /* TileSelected.png */; };
+		25DDA8EF15AA2A910049B532 /* TileToday.png in Resources */ = {isa = PBXBuildFile; fileRef = 25DDA8B815AA23C20049B532 /* TileToday.png */; };
+		25DDA8F015AA2A910049B532 /* TileTodaySelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 25DDA8B915AA23C20049B532 /* TileTodaySelected.png */; };
+		25DDA8F415AA2AD60049B532 /* ABViewPool.h in Headers */ = {isa = PBXBuildFile; fileRef = 25DDA8F215AA2AD60049B532 /* ABViewPool.h */; };
+		25DDA8F515AA2AD60049B532 /* ABViewPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 25DDA8F315AA2AD60049B532 /* ABViewPool.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		25DDA88315AA22A80049B532 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 25DDA86315AA22A80049B532 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 25DDA86B15AA22A80049B532;
+			remoteInfo = ABCalendarPicker;
+		};
+		25DDA8D415AA29DF0049B532 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 25DDA86315AA22A80049B532 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 25DDA86B15AA22A80049B532;
+			remoteInfo = ABCalendarPicker;
+		};
+		25DDA8E815AA2A860049B532 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 25DDA86315AA22A80049B532 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 25DDA8DA15AA2A380049B532;
+			remoteInfo = ABCalendarPickerBundle;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		25DDA86A15AA22A80049B532 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2545A3E315AD723000824C30 /* TileDisabledSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TileDisabledSelected.png; sourceTree = "<group>"; };
+		254FD26615BDBAB900C82DF8 /* ABCalendarPickerStyleProviderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCalendarPickerStyleProviderProtocol.h; sourceTree = "<group>"; };
+		254FD26915BDBCC700C82DF8 /* ABCalendarPickerDefaultStyleProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCalendarPickerDefaultStyleProvider.h; sourceTree = "<group>"; };
+		254FD26A15BDBCC700C82DF8 /* ABCalendarPickerDefaultStyleProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABCalendarPickerDefaultStyleProvider.m; sourceTree = "<group>"; };
+		257E468815AF5A7900C48F75 /* TilePattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TilePattern.png; sourceTree = "<group>"; };
+		259BA22215B3484000079C27 /* GradientBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GradientBar.png; sourceTree = "<group>"; };
+		25DA123315E8DD530067F6EB /* UIMyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIMyButton.h; sourceTree = "<group>"; };
+		25DA123415E8DD530067F6EB /* UIMyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIMyButton.m; sourceTree = "<group>"; };
+		25DDA86C15AA22A80049B532 /* libABCalendarPicker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libABCalendarPicker.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		25DDA86F15AA22A80049B532 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		25DDA87315AA22A80049B532 /* ABCalendarPicker-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ABCalendarPicker-Prefix.pch"; sourceTree = "<group>"; };
+		25DDA87415AA22A80049B532 /* ABCalendarPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABCalendarPicker.h; sourceTree = "<group>"; };
+		25DDA87615AA22A80049B532 /* ABCalendarPicker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABCalendarPicker.m; sourceTree = "<group>"; };
+		25DDA87D15AA22A80049B532 /* ABCalendarPickerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ABCalendarPickerTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		25DDA87E15AA22A80049B532 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		25DDA88815AA22A80049B532 /* ABCalendarPickerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ABCalendarPickerTests-Info.plist"; sourceTree = "<group>"; };
+		25DDA88C15AA22A80049B532 /* ABCalendarPickerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABCalendarPickerTests.h; sourceTree = "<group>"; };
+		25DDA88D15AA22A80049B532 /* ABCalendarPickerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABCalendarPickerTests.m; sourceTree = "<group>"; };
+		25DDA89715AA23040049B532 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		25DDA89C15AA23410049B532 /* ABCalendarPickerDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCalendarPickerDelegateProtocol.h; sourceTree = "<group>"; };
+		25DDA89D15AA23500049B532 /* ABCalendarPickerDataSourceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCalendarPickerDataSourceProtocol.h; sourceTree = "<group>"; };
+		25DDA89E15AA23500049B532 /* ABCalendarPickerDateProviderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCalendarPickerDateProviderProtocol.h; sourceTree = "<group>"; };
+		25DDA89F15AA235C0049B532 /* ABCalendarPickerDefaultDaysProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCalendarPickerDefaultDaysProvider.h; sourceTree = "<group>"; };
+		25DDA8A015AA235C0049B532 /* ABCalendarPickerDefaultDaysProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABCalendarPickerDefaultDaysProvider.m; sourceTree = "<group>"; };
+		25DDA8A115AA235C0049B532 /* ABCalendarPickerDefaultErasProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCalendarPickerDefaultErasProvider.h; sourceTree = "<group>"; };
+		25DDA8A215AA235C0049B532 /* ABCalendarPickerDefaultErasProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABCalendarPickerDefaultErasProvider.m; sourceTree = "<group>"; };
+		25DDA8A315AA235C0049B532 /* ABCalendarPickerDefaultMonthsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCalendarPickerDefaultMonthsProvider.h; sourceTree = "<group>"; };
+		25DDA8A415AA235C0049B532 /* ABCalendarPickerDefaultMonthsProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABCalendarPickerDefaultMonthsProvider.m; sourceTree = "<group>"; };
+		25DDA8A815AA236A0049B532 /* ABCalendarPickerDefaultSeasonedMonthsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCalendarPickerDefaultSeasonedMonthsProvider.h; sourceTree = "<group>"; };
+		25DDA8A915AA236A0049B532 /* ABCalendarPickerDefaultSeasonedMonthsProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABCalendarPickerDefaultSeasonedMonthsProvider.m; sourceTree = "<group>"; };
+		25DDA8AA15AA236A0049B532 /* ABCalendarPickerDefaultWeekdaysProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCalendarPickerDefaultWeekdaysProvider.h; sourceTree = "<group>"; };
+		25DDA8AB15AA236A0049B532 /* ABCalendarPickerDefaultWeekdaysProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABCalendarPickerDefaultWeekdaysProvider.m; sourceTree = "<group>"; };
+		25DDA8AC15AA236A0049B532 /* ABCalendarPickerDefaultYearsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCalendarPickerDefaultYearsProvider.h; sourceTree = "<group>"; };
+		25DDA8AD15AA236A0049B532 /* ABCalendarPickerDefaultYearsProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABCalendarPickerDefaultYearsProvider.m; sourceTree = "<group>"; };
+		25DDA8B615AA23C20049B532 /* TileNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TileNormal.png; sourceTree = "<group>"; };
+		25DDA8B715AA23C20049B532 /* TileSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TileSelected.png; sourceTree = "<group>"; };
+		25DDA8B815AA23C20049B532 /* TileToday.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TileToday.png; sourceTree = "<group>"; };
+		25DDA8B915AA23C20049B532 /* TileTodaySelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TileTodaySelected.png; sourceTree = "<group>"; };
+		25DDA8DB15AA2A380049B532 /* ABCalendarPicker.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ABCalendarPicker.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		25DDA8DC15AA2A380049B532 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		25DDA8E015AA2A380049B532 /* ABCalendarPickerBundle-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ABCalendarPickerBundle-Info.plist"; sourceTree = "<group>"; };
+		25DDA8E415AA2A380049B532 /* ABCalendarPickerBundle-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ABCalendarPickerBundle-Prefix.pch"; sourceTree = "<group>"; };
+		25DDA8F215AA2AD60049B532 /* ABViewPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABViewPool.h; sourceTree = "<group>"; };
+		25DDA8F315AA2AD60049B532 /* ABViewPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABViewPool.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		25DDA86915AA22A80049B532 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25DDA89815AA23040049B532 /* UIKit.framework in Frameworks */,
+				25DDA87015AA22A80049B532 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25DDA87915AA22A80049B532 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25DDA87F15AA22A80049B532 /* SenTestingKit.framework in Frameworks */,
+				25DDA88215AA22A80049B532 /* Foundation.framework in Frameworks */,
+				25DDA88515AA22A80049B532 /* libABCalendarPicker.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25DDA8D815AA2A380049B532 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25DDA8DD15AA2A380049B532 /* CoreFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		25DDA86115AA22A80049B532 = {
+			isa = PBXGroup;
+			children = (
+				25DDA87115AA22A80049B532 /* ABCalendarPicker */,
+				25DDA88615AA22A80049B532 /* ABCalendarPickerTests */,
+				25DDA8DE15AA2A380049B532 /* ABCalendarPickerBundle */,
+				25DDA86E15AA22A80049B532 /* Frameworks */,
+				25DDA86D15AA22A80049B532 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		25DDA86D15AA22A80049B532 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				25DDA86C15AA22A80049B532 /* libABCalendarPicker.a */,
+				25DDA87D15AA22A80049B532 /* ABCalendarPickerTests.octest */,
+				25DDA8DB15AA2A380049B532 /* ABCalendarPicker.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		25DDA86E15AA22A80049B532 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				25DDA89715AA23040049B532 /* UIKit.framework */,
+				25DDA86F15AA22A80049B532 /* Foundation.framework */,
+				25DDA87E15AA22A80049B532 /* SenTestingKit.framework */,
+				25DDA8DC15AA2A380049B532 /* CoreFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		25DDA87115AA22A80049B532 /* ABCalendarPicker */ = {
+			isa = PBXGroup;
+			children = (
+				25DDA89915AA231F0049B532 /* Classes */,
+				25DDA87215AA22A80049B532 /* Supporting Files */,
+			);
+			name = ABCalendarPicker;
+			path = ABCalendarPicker;
+			sourceTree = "<group>";
+		};
+		25DDA87215AA22A80049B532 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				25DDA87315AA22A80049B532 /* ABCalendarPicker-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		25DDA88615AA22A80049B532 /* ABCalendarPickerTests */ = {
+			isa = PBXGroup;
+			children = (
+				25DDA88C15AA22A80049B532 /* ABCalendarPickerTests.h */,
+				25DDA88D15AA22A80049B532 /* ABCalendarPickerTests.m */,
+				25DDA88715AA22A80049B532 /* Supporting Files */,
+			);
+			name = ABCalendarPickerTests;
+			path = ABCalendarPickerTests;
+			sourceTree = "<group>";
+		};
+		25DDA88715AA22A80049B532 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				25DDA88815AA22A80049B532 /* ABCalendarPickerTests-Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		25DDA89915AA231F0049B532 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				25DDA8F215AA2AD60049B532 /* ABViewPool.h */,
+				25DDA8F315AA2AD60049B532 /* ABViewPool.m */,
+				25DDA87415AA22A80049B532 /* ABCalendarPicker.h */,
+				25DDA87615AA22A80049B532 /* ABCalendarPicker.m */,
+				25DDA89B15AA23290049B532 /* Protocols */,
+				25DDA89A15AA23230049B532 /* Providers */,
+				25DA123315E8DD530067F6EB /* UIMyButton.h */,
+				25DA123415E8DD530067F6EB /* UIMyButton.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		25DDA89A15AA23230049B532 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				25DDA8A815AA236A0049B532 /* ABCalendarPickerDefaultSeasonedMonthsProvider.h */,
+				25DDA8A915AA236A0049B532 /* ABCalendarPickerDefaultSeasonedMonthsProvider.m */,
+				25DDA8AA15AA236A0049B532 /* ABCalendarPickerDefaultWeekdaysProvider.h */,
+				25DDA8AB15AA236A0049B532 /* ABCalendarPickerDefaultWeekdaysProvider.m */,
+				25DDA8AC15AA236A0049B532 /* ABCalendarPickerDefaultYearsProvider.h */,
+				25DDA8AD15AA236A0049B532 /* ABCalendarPickerDefaultYearsProvider.m */,
+				25DDA89F15AA235C0049B532 /* ABCalendarPickerDefaultDaysProvider.h */,
+				25DDA8A015AA235C0049B532 /* ABCalendarPickerDefaultDaysProvider.m */,
+				25DDA8A115AA235C0049B532 /* ABCalendarPickerDefaultErasProvider.h */,
+				25DDA8A215AA235C0049B532 /* ABCalendarPickerDefaultErasProvider.m */,
+				25DDA8A315AA235C0049B532 /* ABCalendarPickerDefaultMonthsProvider.h */,
+				25DDA8A415AA235C0049B532 /* ABCalendarPickerDefaultMonthsProvider.m */,
+				254FD26915BDBCC700C82DF8 /* ABCalendarPickerDefaultStyleProvider.h */,
+				254FD26A15BDBCC700C82DF8 /* ABCalendarPickerDefaultStyleProvider.m */,
+			);
+			name = Providers;
+			sourceTree = "<group>";
+		};
+		25DDA89B15AA23290049B532 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				25DDA89D15AA23500049B532 /* ABCalendarPickerDataSourceProtocol.h */,
+				25DDA89E15AA23500049B532 /* ABCalendarPickerDateProviderProtocol.h */,
+				25DDA89C15AA23410049B532 /* ABCalendarPickerDelegateProtocol.h */,
+				254FD26615BDBAB900C82DF8 /* ABCalendarPickerStyleProviderProtocol.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		25DDA8B215AA23A00049B532 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				259BA22215B3484000079C27 /* GradientBar.png */,
+				257E468815AF5A7900C48F75 /* TilePattern.png */,
+				2545A3E315AD723000824C30 /* TileDisabledSelected.png */,
+				25DDA8B615AA23C20049B532 /* TileNormal.png */,
+				25DDA8B715AA23C20049B532 /* TileSelected.png */,
+				25DDA8B815AA23C20049B532 /* TileToday.png */,
+				25DDA8B915AA23C20049B532 /* TileTodaySelected.png */,
+			);
+			name = Images;
+			path = ../ABCalendarPicker;
+			sourceTree = "<group>";
+		};
+		25DDA8DE15AA2A380049B532 /* ABCalendarPickerBundle */ = {
+			isa = PBXGroup;
+			children = (
+				25DDA8B215AA23A00049B532 /* Images */,
+				25DDA8DF15AA2A380049B532 /* Supporting Files */,
+			);
+			name = ABCalendarPickerBundle;
+			path = ABCalendarPickerBundle;
+			sourceTree = "<group>";
+		};
+		25DDA8DF15AA2A380049B532 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				25DDA8E015AA2A380049B532 /* ABCalendarPickerBundle-Info.plist */,
+				25DDA8E415AA2A380049B532 /* ABCalendarPickerBundle-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		25DDA8C415AA295D0049B532 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				254FD26715BDBAB900C82DF8 /* ABCalendarPickerStyleProviderProtocol.h in Headers */,
+				254FD26B15BDBCC700C82DF8 /* ABCalendarPickerDefaultStyleProvider.h in Headers */,
+				25DDA8C515AA297C0049B532 /* ABCalendarPicker.h in Headers */,
+				25DDA8C615AA297C0049B532 /* ABCalendarPickerDataSourceProtocol.h in Headers */,
+				25DDA8C715AA297C0049B532 /* ABCalendarPickerDateProviderProtocol.h in Headers */,
+				25DDA8C815AA297C0049B532 /* ABCalendarPickerDelegateProtocol.h in Headers */,
+				25DDA8C915AA297C0049B532 /* ABCalendarPickerDefaultSeasonedMonthsProvider.h in Headers */,
+				25DDA8CA15AA297C0049B532 /* ABCalendarPickerDefaultWeekdaysProvider.h in Headers */,
+				25DDA8CB15AA297C0049B532 /* ABCalendarPickerDefaultYearsProvider.h in Headers */,
+				25DDA8CC15AA297C0049B532 /* ABCalendarPickerDefaultDaysProvider.h in Headers */,
+				25DDA8CD15AA297C0049B532 /* ABCalendarPickerDefaultErasProvider.h in Headers */,
+				25DDA8CE15AA297D0049B532 /* ABCalendarPickerDefaultMonthsProvider.h in Headers */,
+				25DDA8F415AA2AD60049B532 /* ABViewPool.h in Headers */,
+				25DA123515E8DD530067F6EB /* UIMyButton.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		25DDA86B15AA22A80049B532 /* ABCalendarPicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 25DDA89115AA22A80049B532 /* Build configuration list for PBXNativeTarget "ABCalendarPicker" */;
+			buildPhases = (
+				25DDA86815AA22A80049B532 /* Sources */,
+				25DDA86915AA22A80049B532 /* Frameworks */,
+				25DDA86A15AA22A80049B532 /* CopyFiles */,
+				25DDA8C415AA295D0049B532 /* Headers */,
+				25DDA8CF15AA298C0049B532 /* Prepare Framework */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ABCalendarPicker;
+			productName = ABCalendarPicker;
+			productReference = 25DDA86C15AA22A80049B532 /* libABCalendarPicker.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		25DDA87C15AA22A80049B532 /* ABCalendarPickerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 25DDA89415AA22A80049B532 /* Build configuration list for PBXNativeTarget "ABCalendarPickerTests" */;
+			buildPhases = (
+				25DDA87815AA22A80049B532 /* Sources */,
+				25DDA87915AA22A80049B532 /* Frameworks */,
+				25DDA87A15AA22A80049B532 /* Resources */,
+				25DDA87B15AA22A80049B532 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				25DDA88415AA22A80049B532 /* PBXTargetDependency */,
+			);
+			name = ABCalendarPickerTests;
+			productName = ABCalendarPickerTests;
+			productReference = 25DDA87D15AA22A80049B532 /* ABCalendarPickerTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+		25DDA8DA15AA2A380049B532 /* ABCalendarPickerBundle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 25DDA8E515AA2A380049B532 /* Build configuration list for PBXNativeTarget "ABCalendarPickerBundle" */;
+			buildPhases = (
+				25DDA8D715AA2A380049B532 /* Sources */,
+				25DDA8D815AA2A380049B532 /* Frameworks */,
+				25DDA8D915AA2A380049B532 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ABCalendarPickerBundle;
+			productName = ABCalendarPickerBundle;
+			productReference = 25DDA8DB15AA2A380049B532 /* ABCalendarPicker.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		25DDA86315AA22A80049B532 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Happy Nation Project";
+			};
+			buildConfigurationList = 25DDA86615AA22A80049B532 /* Build configuration list for PBXProject "ABCalendarPicker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				ru,
+			);
+			mainGroup = 25DDA86115AA22A80049B532;
+			productRefGroup = 25DDA86D15AA22A80049B532 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				25DDA86B15AA22A80049B532 /* ABCalendarPicker */,
+				25DDA87C15AA22A80049B532 /* ABCalendarPickerTests */,
+				25DDA8DA15AA2A380049B532 /* ABCalendarPickerBundle */,
+				25DDA8D015AA29D40049B532 /* ABCalendarPickerAll */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		25DDA87A15AA22A80049B532 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25DDA8D915AA2A380049B532 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25DDA8ED15AA2A910049B532 /* TileNormal.png in Resources */,
+				25DDA8EE15AA2A910049B532 /* TileSelected.png in Resources */,
+				25DDA8EF15AA2A910049B532 /* TileToday.png in Resources */,
+				25DDA8F015AA2A910049B532 /* TileTodaySelected.png in Resources */,
+				2545A3E415AD723000824C30 /* TileDisabledSelected.png in Resources */,
+				257E468915AF5A7900C48F75 /* TilePattern.png in Resources */,
+				259BA22315B3484000079C27 /* GradientBar.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		25DDA87B15AA22A80049B532 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		25DDA8CF15AA298C0049B532 /* Prepare Framework */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Prepare Framework";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nmkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/A/Headers\"\n\n# Link the \"Current\" version to \"A\"\n/bin/ln -sfh A \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/Current\"\n/bin/ln -sfh Versions/Current/Headers \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Headers\"\n/bin/ln -sfh \"Versions/Current/${PRODUCT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/${PRODUCT_NAME}\"\n\n# The -a ensures that the headers maintain the source modification date so that we don't constantly\n# cause propagating rebuilds of files that import these headers.\n/bin/cp -a \"${TARGET_BUILD_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/A/Headers\"\n";
+		};
+		25DDA8D615AA29EC0049B532 /* Build Framework */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build Framework";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nset +u\n# Avoid recursively calling this script.\nif [[ $SF_MASTER_SCRIPT_RUNNING ]]\nthen\nexit 0\nfi\nset -u\nexport SF_MASTER_SCRIPT_RUNNING=1\n\nSF_TARGET_NAME=${PROJECT_NAME}\nSF_EXECUTABLE_PATH=\"lib${SF_TARGET_NAME}.a\"\nSF_WRAPPER_NAME=\"${SF_TARGET_NAME}.framework\"\n\n# The following conditionals come from\n# https://github.com/kstenerud/iOS-Universal-Framework\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\nSF_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\necho \"Could not find platform name from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\nSF_SDK_VERSION=${BASH_REMATCH[1]}\nelse\necho \"Could not find sdk version from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\nif [[ \"$SF_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\nSF_OTHER_PLATFORM=iphonesimulator\nelse\nSF_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$SF_SDK_PLATFORM$ ]]\nthen\nSF_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${SF_OTHER_PLATFORM}\"\nelse\necho \"Could not find platform name from build products directory: $BUILT_PRODUCTS_DIR\"\nexit 1\nfi\n\n# Build the other platform.\nxcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${SF_OTHER_PLATFORM}${SF_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" OBJROOT=\"${OBJROOT}\" BUILD_ROOT=\"${BUILD_ROOT}\" SYMROOT=\"${SYMROOT}\" $ACTION\n\n# Smash the two static libraries into one fat binary and store it in the .framework\nlipo -create \"${BUILT_PRODUCTS_DIR}/${SF_EXECUTABLE_PATH}\" \"${SF_OTHER_BUILT_PRODUCTS_DIR}/${SF_EXECUTABLE_PATH}\" -output \"${BUILT_PRODUCTS_DIR}/${SF_WRAPPER_NAME}/Versions/A/${SF_TARGET_NAME}\"\n\n# Copy the binary to the other architecture folder to have a complete framework in both.\ncp -a \"${BUILT_PRODUCTS_DIR}/${SF_WRAPPER_NAME}/Versions/A/${SF_TARGET_NAME}\" \"${SF_OTHER_BUILT_PRODUCTS_DIR}/${SF_WRAPPER_NAME}/Versions/A/${SF_TARGET_NAME}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		25DDA86815AA22A80049B532 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25DDA87715AA22A80049B532 /* ABCalendarPicker.m in Sources */,
+				25DDA8A515AA235C0049B532 /* ABCalendarPickerDefaultDaysProvider.m in Sources */,
+				25DDA8A615AA235C0049B532 /* ABCalendarPickerDefaultErasProvider.m in Sources */,
+				25DDA8A715AA235C0049B532 /* ABCalendarPickerDefaultMonthsProvider.m in Sources */,
+				25DDA8AE15AA236A0049B532 /* ABCalendarPickerDefaultSeasonedMonthsProvider.m in Sources */,
+				25DDA8AF15AA236A0049B532 /* ABCalendarPickerDefaultWeekdaysProvider.m in Sources */,
+				25DDA8B015AA236A0049B532 /* ABCalendarPickerDefaultYearsProvider.m in Sources */,
+				25DDA8F515AA2AD60049B532 /* ABViewPool.m in Sources */,
+				254FD26C15BDBCC700C82DF8 /* ABCalendarPickerDefaultStyleProvider.m in Sources */,
+				25DA123615E8DD530067F6EB /* UIMyButton.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25DDA87815AA22A80049B532 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25DDA88E15AA22A80049B532 /* ABCalendarPickerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25DDA8D715AA2A380049B532 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		25DDA88415AA22A80049B532 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 25DDA86B15AA22A80049B532 /* ABCalendarPicker */;
+			targetProxy = 25DDA88315AA22A80049B532 /* PBXContainerItemProxy */;
+		};
+		25DDA8D515AA29DF0049B532 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 25DDA86B15AA22A80049B532 /* ABCalendarPicker */;
+			targetProxy = 25DDA8D415AA29DF0049B532 /* PBXContainerItemProxy */;
+		};
+		25DDA8E915AA2A860049B532 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 25DDA8DA15AA2A380049B532 /* ABCalendarPickerBundle */;
+			targetProxy = 25DDA8E815AA2A860049B532 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		25DDA88F15AA22A80049B532 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		25DDA89015AA22A80049B532 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		25DDA89215AA22A80049B532 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
+				DSTROOT = /tmp/ABCalendarPicker.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ABCalendarPicker/ABCalendarPicker-Prefix.pch";
+				GENERATE_PROFILING_CODE = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = ABCalendarPicker;
+				PUBLIC_HEADERS_FOLDER_PATH = Headers;
+				SKIP_INSTALL = YES;
+				STRIP_STYLE = "non-global";
+			};
+			name = Debug;
+		};
+		25DDA89315AA22A80049B532 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
+				DSTROOT = /tmp/ABCalendarPicker.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ABCalendarPicker/ABCalendarPicker-Prefix.pch";
+				GENERATE_PROFILING_CODE = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = ABCalendarPicker;
+				PUBLIC_HEADERS_FOLDER_PATH = Headers;
+				SKIP_INSTALL = YES;
+				STRIP_STYLE = "non-global";
+			};
+			name = Release;
+		};
+		25DDA89515AA22A80049B532 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ABCalendarPicker/ABCalendarPicker-Prefix.pch";
+				INFOPLIST_FILE = "ABCalendarPickerTests/ABCalendarPickerTests-Info.plist";
+				PRODUCT_NAME = ABCalendarPickerTests;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		25DDA89615AA22A80049B532 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ABCalendarPicker/ABCalendarPicker-Prefix.pch";
+				INFOPLIST_FILE = "ABCalendarPickerTests/ABCalendarPickerTests-Info.plist";
+				PRODUCT_NAME = ABCalendarPickerTests;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		25DDA8D215AA29D40049B532 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = ABCalendarPickerAll;
+			};
+			name = Debug;
+		};
+		25DDA8D315AA29D40049B532 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = ABCalendarPickerAll;
+			};
+			name = Release;
+		};
+		25DDA8E615AA2A380049B532 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COMBINE_HIDPI_IMAGES = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ABCalendarPickerBundle/ABCalendarPickerBundle-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "ABCalendarPickerBundle/ABCalendarPickerBundle-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = ABCalendarPicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		25DDA8E715AA2A380049B532 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COMBINE_HIDPI_IMAGES = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ABCalendarPickerBundle/ABCalendarPickerBundle-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "ABCalendarPickerBundle/ABCalendarPickerBundle-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = ABCalendarPicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		25DDA86615AA22A80049B532 /* Build configuration list for PBXProject "ABCalendarPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25DDA88F15AA22A80049B532 /* Debug */,
+				25DDA89015AA22A80049B532 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		25DDA89115AA22A80049B532 /* Build configuration list for PBXNativeTarget "ABCalendarPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25DDA89215AA22A80049B532 /* Debug */,
+				25DDA89315AA22A80049B532 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		25DDA89415AA22A80049B532 /* Build configuration list for PBXNativeTarget "ABCalendarPickerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25DDA89515AA22A80049B532 /* Debug */,
+				25DDA89615AA22A80049B532 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		25DDA8D115AA29D40049B532 /* Build configuration list for PBXAggregateTarget "ABCalendarPickerAll" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25DDA8D215AA29D40049B532 /* Debug */,
+				25DDA8D315AA29D40049B532 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		25DDA8E515AA2A380049B532 /* Build configuration list for PBXNativeTarget "ABCalendarPickerBundle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25DDA8E615AA2A380049B532 /* Debug */,
+				25DDA8E715AA2A380049B532 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 25DDA86315AA22A80049B532 /* Project object */;
+}
