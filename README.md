@@ -8,7 +8,7 @@ Fully configurable iOS calendar UI component with multiple layouts and smooth an
 
 ##Demo video
 
-[http://youtu.be/d2PGFiO_jk4](http://youtu.be/d2PGFiO_jk4)
+<iframe width="420" height="315" src="http://www.youtube.com/embed/d2PGFiO_jk4" frameborder="0" allowfullscreen></iframe>
 
 ##App to try
 
