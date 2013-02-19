@@ -1058,6 +1058,7 @@
         if ([(id)self.delegate respondsToSelector:@selector(calendarPicker:shouldSetState:fromState:)]
             && ![self.delegate calendarPicker:self shouldSetState:toState fromState:fromState])
         {
+            self.userInteractionEnabled = YES;
             return;
         }
         
