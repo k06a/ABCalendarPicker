@@ -47,8 +47,11 @@ This library project is "iOS Static Library" and made with this instruction: [ht
 4. ```#import <ABCalendarPicker/ABCalendarPicker.h>``` anywhere you need.
 
 ##Demo video
+Here are two videos, short and long. Short video shows component features. Long video shows commertial app features on iPhone 4 (really the slowest iPhone for animations).
 
-[http://youtu.be/d2PGFiO_jk4](http://youtu.be/d2PGFiO_jk4)
+ABCalendarComponent short demo: [http://youtu.be/d2PGFiO_jk4](http://youtu.be/d2PGFiO_jk4)
+
+Mr.Calendarion long demo: [http://youtu.be/Hz3D4Q5CDuQ](http://youtu.be/Hz3D4Q5CDuQ)
 
 ##App to try
 
