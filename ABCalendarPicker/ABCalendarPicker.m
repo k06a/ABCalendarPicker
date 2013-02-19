@@ -803,7 +803,7 @@
     }
     
     if ((provider == self.daysProvider || provider == self.weekdaysProvider)
-        && [(id)self.dataSource respondsToSelector:@selector(calendarPicker:numberOfEventsForDate:onState:)])
+        && [(id)self.dataSource respondsToSelector:@selector(calendarPicker:eventsForDate:onState:)])
     {
         [self performSelector:@selector(updateDots) withObject:nil afterDelay:0.0];
     }
