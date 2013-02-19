@@ -51,7 +51,7 @@ Here are two videos, short and long. Short video shows component features. Long 
 
 ABCalendarComponent short demo: [http://youtu.be/d2PGFiO_jk4](http://youtu.be/d2PGFiO_jk4)
 
-Mr.Calendarion long demo: [http://youtu.be/Hz3D4Q5CDuQ](http://youtu.be/Hz3D4Q5CDuQ)
+Mr.Calendario long demo: [http://youtu.be/Hz3D4Q5CDuQ](http://youtu.be/Hz3D4Q5CDuQ)
 
 ##App to try
 
