@@ -18,6 +18,8 @@ Seasoned month view:
 
 ##Include framework in your project
 
+This library project is "iOS Static Library" and made with this instruction: [http://code.google.com/p/ios-static-framework/](http://code.google.com/p/ios-static-framework/)
+
 ###Get compiled framework and bundle
 
 1. Get it from ```/Demo``` subdirectory or goto 2.
@@ -51,3 +53,6 @@ Seasoned month view:
 ##App to try
 
 [Mr.Calendario in AppStore](http://appstore.com/mr.calendario) (not free)
+
+---
+Written with [Mou](http://mouapp.com) - The missing Markdown editor for web developers
