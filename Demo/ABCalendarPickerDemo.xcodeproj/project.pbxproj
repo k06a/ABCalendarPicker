@@ -1,0 +1,337 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		254756D916D33DE600CDD004 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 254756D816D33DE600CDD004 /* UIKit.framework */; };
+		254756DB16D33DE600CDD004 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 254756DA16D33DE600CDD004 /* Foundation.framework */; };
+		254756DD16D33DE600CDD004 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 254756DC16D33DE600CDD004 /* CoreGraphics.framework */; };
+		254756E316D33DE600CDD004 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 254756E116D33DE600CDD004 /* InfoPlist.strings */; };
+		254756E516D33DE600CDD004 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 254756E416D33DE600CDD004 /* main.m */; };
+		254756E916D33DE600CDD004 /* ABAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 254756E816D33DE600CDD004 /* ABAppDelegate.m */; };
+		254756EB16D33DE600CDD004 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 254756EA16D33DE600CDD004 /* Default.png */; };
+		254756ED16D33DE600CDD004 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 254756EC16D33DE600CDD004 /* Default@2x.png */; };
+		254756EF16D33DE600CDD004 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 254756EE16D33DE600CDD004 /* Default-568h@2x.png */; };
+		254756F216D33DE600CDD004 /* ABViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 254756F116D33DE600CDD004 /* ABViewController.m */; };
+		254756F516D33DE600CDD004 /* ABViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 254756F316D33DE600CDD004 /* ABViewController.xib */; };
+		254756FC16D33F3700CDD004 /* ABCalendarPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 254756FB16D33F3700CDD004 /* ABCalendarPicker.framework */; };
+		254756FF16D342B400CDD004 /* ABCalendarPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 254756FE16D342B400CDD004 /* ABCalendarPicker.bundle */; };
+		2547570216D3483600CDD004 /* CalendarShadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 2547570116D3483600CDD004 /* CalendarShadow.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		254756D516D33DE600CDD004 /* ABCalendarPickerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ABCalendarPickerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		254756D816D33DE600CDD004 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		254756DA16D33DE600CDD004 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		254756DC16D33DE600CDD004 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		254756E016D33DE600CDD004 /* ABCalendarPickerDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ABCalendarPickerDemo-Info.plist"; sourceTree = "<group>"; };
+		254756E216D33DE600CDD004 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		254756E416D33DE600CDD004 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		254756E616D33DE600CDD004 /* ABCalendarPickerDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ABCalendarPickerDemo-Prefix.pch"; sourceTree = "<group>"; };
+		254756E716D33DE600CDD004 /* ABAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABAppDelegate.h; sourceTree = "<group>"; };
+		254756E816D33DE600CDD004 /* ABAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABAppDelegate.m; sourceTree = "<group>"; };
+		254756EA16D33DE600CDD004 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		254756EC16D33DE600CDD004 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		254756EE16D33DE600CDD004 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		254756F016D33DE600CDD004 /* ABViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABViewController.h; sourceTree = "<group>"; };
+		254756F116D33DE600CDD004 /* ABViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABViewController.m; sourceTree = "<group>"; };
+		254756F416D33DE600CDD004 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ABViewController.xib; sourceTree = "<group>"; };
+		254756FB16D33F3700CDD004 /* ABCalendarPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ABCalendarPicker.framework; sourceTree = "<group>"; };
+		254756FE16D342B400CDD004 /* ABCalendarPicker.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ABCalendarPicker.bundle; sourceTree = SOURCE_ROOT; };
+		2547570116D3483600CDD004 /* CalendarShadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CalendarShadow.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		254756D216D33DE600CDD004 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				254756D916D33DE600CDD004 /* UIKit.framework in Frameworks */,
+				254756DB16D33DE600CDD004 /* Foundation.framework in Frameworks */,
+				254756DD16D33DE600CDD004 /* CoreGraphics.framework in Frameworks */,
+				254756FC16D33F3700CDD004 /* ABCalendarPicker.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		254756CC16D33DE600CDD004 = {
+			isa = PBXGroup;
+			children = (
+				254756DE16D33DE600CDD004 /* ABCalendarPickerDemo */,
+				254756D716D33DE600CDD004 /* Frameworks */,
+				254756D616D33DE600CDD004 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		254756D616D33DE600CDD004 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				254756D516D33DE600CDD004 /* ABCalendarPickerDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		254756D716D33DE600CDD004 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				254756FB16D33F3700CDD004 /* ABCalendarPicker.framework */,
+				254756D816D33DE600CDD004 /* UIKit.framework */,
+				254756DA16D33DE600CDD004 /* Foundation.framework */,
+				254756DC16D33DE600CDD004 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		254756DE16D33DE600CDD004 /* ABCalendarPickerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				254756E716D33DE600CDD004 /* ABAppDelegate.h */,
+				254756E816D33DE600CDD004 /* ABAppDelegate.m */,
+				254756F016D33DE600CDD004 /* ABViewController.h */,
+				254756F116D33DE600CDD004 /* ABViewController.m */,
+				254756F316D33DE600CDD004 /* ABViewController.xib */,
+				2547570016D342BA00CDD004 /* Resources */,
+				254756DF16D33DE600CDD004 /* Supporting Files */,
+			);
+			path = ABCalendarPickerDemo;
+			sourceTree = "<group>";
+		};
+		254756DF16D33DE600CDD004 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				254756E016D33DE600CDD004 /* ABCalendarPickerDemo-Info.plist */,
+				254756E116D33DE600CDD004 /* InfoPlist.strings */,
+				254756E416D33DE600CDD004 /* main.m */,
+				254756E616D33DE600CDD004 /* ABCalendarPickerDemo-Prefix.pch */,
+				254756EA16D33DE600CDD004 /* Default.png */,
+				254756EC16D33DE600CDD004 /* Default@2x.png */,
+				254756EE16D33DE600CDD004 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2547570016D342BA00CDD004 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2547570116D3483600CDD004 /* CalendarShadow.png */,
+				254756FE16D342B400CDD004 /* ABCalendarPicker.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		254756D416D33DE600CDD004 /* ABCalendarPickerDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 254756F816D33DE600CDD004 /* Build configuration list for PBXNativeTarget "ABCalendarPickerDemo" */;
+			buildPhases = (
+				254756D116D33DE600CDD004 /* Sources */,
+				254756D216D33DE600CDD004 /* Frameworks */,
+				254756D316D33DE600CDD004 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ABCalendarPickerDemo;
+			productName = ABCalendarPickerDemo;
+			productReference = 254756D516D33DE600CDD004 /* ABCalendarPickerDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		254756CD16D33DE600CDD004 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = AB;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Anton Bukov";
+			};
+			buildConfigurationList = 254756D016D33DE600CDD004 /* Build configuration list for PBXProject "ABCalendarPickerDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 254756CC16D33DE600CDD004;
+			productRefGroup = 254756D616D33DE600CDD004 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				254756D416D33DE600CDD004 /* ABCalendarPickerDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		254756D316D33DE600CDD004 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				254756E316D33DE600CDD004 /* InfoPlist.strings in Resources */,
+				254756EB16D33DE600CDD004 /* Default.png in Resources */,
+				254756ED16D33DE600CDD004 /* Default@2x.png in Resources */,
+				254756EF16D33DE600CDD004 /* Default-568h@2x.png in Resources */,
+				254756F516D33DE600CDD004 /* ABViewController.xib in Resources */,
+				254756FF16D342B400CDD004 /* ABCalendarPicker.bundle in Resources */,
+				2547570216D3483600CDD004 /* CalendarShadow.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		254756D116D33DE600CDD004 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				254756E516D33DE600CDD004 /* main.m in Sources */,
+				254756E916D33DE600CDD004 /* ABAppDelegate.m in Sources */,
+				254756F216D33DE600CDD004 /* ABViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		254756E116D33DE600CDD004 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				254756E216D33DE600CDD004 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		254756F316D33DE600CDD004 /* ABViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				254756F416D33DE600CDD004 /* en */,
+			);
+			name = ABViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		254756F616D33DE600CDD004 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		254756F716D33DE600CDD004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		254756F916D33DE600CDD004 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ABCalendarPickerDemo/ABCalendarPickerDemo-Prefix.pch";
+				INFOPLIST_FILE = "ABCalendarPickerDemo/ABCalendarPickerDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		254756FA16D33DE600CDD004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ABCalendarPickerDemo/ABCalendarPickerDemo-Prefix.pch";
+				INFOPLIST_FILE = "ABCalendarPickerDemo/ABCalendarPickerDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		254756D016D33DE600CDD004 /* Build configuration list for PBXProject "ABCalendarPickerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				254756F616D33DE600CDD004 /* Debug */,
+				254756F716D33DE600CDD004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		254756F816D33DE600CDD004 /* Build configuration list for PBXNativeTarget "ABCalendarPickerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				254756F916D33DE600CDD004 /* Debug */,
+				254756FA16D33DE600CDD004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 254756CD16D33DE600CDD004 /* Project object */;
+}
