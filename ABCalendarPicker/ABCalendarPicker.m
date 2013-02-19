@@ -730,13 +730,6 @@
     }
 }
 
-typedef void (^VoidBlock)();
-
-- (void)callBlock:(VoidBlock)initer
-{
-    initer();
-}
-
 - (void)updateDots
 {
     if ([[self.leftArrow.gestureRecognizers lastObject] state] == UIGestureRecognizerStateBegan
