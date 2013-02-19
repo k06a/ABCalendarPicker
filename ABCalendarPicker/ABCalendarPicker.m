@@ -711,7 +711,7 @@
     [self.leftArrow setTitleColor:self.styleProvider.textColor forState:UIControlStateNormal];
     [self.leftArrow setTitleShadowColor:self.styleProvider.textShadowColor forState:UIControlStateNormal];
     
-    self.rightArrow.frame = CGRectMake(320-40-(self.longRightArrow.hidden ? 0 : 35), 3, 40, 45);
+    self.rightArrow.frame = CGRectMake(self.bounds.size.width-40-(self.longRightArrow.hidden ? 0 : 35), 3, 40, 45);
     [self.rightArrow setTitleColor:self.styleProvider.textColor forState:UIControlStateNormal];
     [self.rightArrow setTitleShadowColor:self.styleProvider.textShadowColor forState:UIControlStateNormal];
     
@@ -724,7 +724,7 @@
     }
     if (!self.longRightArrow.hidden)
     {
-        self.longRightArrow.frame = CGRectMake(320-35, 3, 35, 45);
+        self.longRightArrow.frame = CGRectMake(self.bounds.size.width-35, 3, 35, 45);
         [self.longRightArrow setTitleColor:self.styleProvider.textColor forState:UIControlStateNormal];
         [self.longRightArrow setTitleShadowColor:self.styleProvider.textShadowColor forState:UIControlStateNormal];
     }
