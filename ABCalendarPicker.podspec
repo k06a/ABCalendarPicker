@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.author       = { "Anton Bukov" => "k06aaa@gmail.com",
                      "Alexsander Akers" => "a2@pandamonia.us" }
   s.source       = { :git => "https://github.com/a2/ABCalendarPicker.git", :branch => "master" }
-  s.platform     = :ios, '5.1'
+  s.platform     = :ios, '5.0'
   s.source_files = 'ABCalendarPicker/*.{h,m}'
   s.resource     = "ABCalendarPicker/ABCalendarPicker.bundle"
   s.requires_arc = true
