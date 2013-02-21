@@ -11,7 +11,7 @@
 
 @interface ABCalendarPickerDefaultYearsProvider : NSObject<ABCalendarPickerDateProviderProtocol>
 
-@property (weak,nonatomic) id<ABCalendarPickerDateOwner> dateOwner;
+@property (unsafe_unretained,nonatomic) id<ABCalendarPickerDateOwner> dateOwner;
 
 - (BOOL)canDiffuse;
 
