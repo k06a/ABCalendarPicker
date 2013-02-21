@@ -10,7 +10,7 @@
 #import "ABViewController.h"
 
 @interface ABViewController () <ABCalendarPickerDelegateProtocol>
-@property (weak, nonatomic) IBOutlet ABCalendarPicker *calendarPicker;
+@property (assign, nonatomic) IBOutlet ABCalendarPicker *calendarPicker;
 @property (strong, nonatomic) UIImageView * calendarShadow;
 @end
 
