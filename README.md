@@ -12,6 +12,10 @@ Week view:
 
 <img src="https://raw.github.com/k06a/ABCalendarPicker/master/week-grid-screenshot.png" width="30%" />
 
+Three weeks view:
+
+<img src="https://raw.github.com/k06a/ABCalendarPicker/master/3weeks-grid-screenshot.png" width="30%" />
+
 Seasoned month view:
 
 <img src="https://raw.github.com/k06a/ABCalendarPicker/master/year-grid-screenshot.png" width="30%" />
