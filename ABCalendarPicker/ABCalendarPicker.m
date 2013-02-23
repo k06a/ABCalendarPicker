@@ -54,7 +54,7 @@
 - (void)changeStateTo:(ABCalendarPickerState)toState
             fromState:(ABCalendarPickerState)fromState
             animation:(ABCalendarPickerAnimation)animation
-           canDiffuse:(BOOL)canDiffuse;
+           canDiffuse:(NSInteger)canDiffuse;
 @end
 
 @implementation ABCalendarPicker
@@ -392,7 +392,7 @@
         return;
     ABCalendarPickerAnimation animation = [self.currentProvider animationForLongPrev];
     self.highlightedDate = [self.currentProvider dateForLongPrevAnimation];
-    [self changeStateTo:self.currentState fromState:self.currentState animation:animation canDiffuse:NO];
+    [self changeStateTo:self.currentState fromState:self.currentState animation:animation canDiffuse:0];
 }
 
 - (void)longRightButtonClicked:(id)sender
@@ -408,7 +408,7 @@
         return;
     ABCalendarPickerAnimation animation = [self.currentProvider animationForLongNext];
     self.highlightedDate = [self.currentProvider dateForLongNextAnimation];
-    [self changeStateTo:self.currentState fromState:self.currentState animation:animation canDiffuse:NO];
+    [self changeStateTo:self.currentState fromState:self.currentState animation:animation canDiffuse:0];
 }
 
 - (void)leftDeepPress:(UILongPressGestureRecognizer*)sender
@@ -417,7 +417,7 @@
         return;
     self.deepPressingInProgress = YES;
     self.highlightedDate = [self.currentProvider dateForPrevAnimation];
-    [self changeStateTo:self.currentState fromState:self.currentState animation:ABCalendarPickerAnimationNone canDiffuse:YES];
+    [self changeStateTo:self.currentState fromState:self.currentState animation:ABCalendarPickerAnimationNone canDiffuse:1];
     if (sender.state == UIGestureRecognizerStateBegan)
         [self performSelector:@selector(leftDeepPress:) withObject:sender afterDelay:0.1];
 }
@@ -428,7 +428,7 @@
         return;
     self.deepPressingInProgress = YES;
     self.highlightedDate = [self.currentProvider dateForNextAnimation];
-    [self changeStateTo:self.currentState fromState:self.currentState animation:ABCalendarPickerAnimationNone canDiffuse:YES];
+    [self changeStateTo:self.currentState fromState:self.currentState animation:ABCalendarPickerAnimationNone canDiffuse:1];
     if (sender.state == UIGestureRecognizerStateBegan)
         [self performSelector:@selector(rightDeepPress:) withObject:sender afterDelay:0.1];
 }
@@ -439,7 +439,7 @@
         return;
     self.deepPressingInProgress = YES;
     self.highlightedDate = [self.currentProvider dateForLongPrevAnimation];
-    [self changeStateTo:self.currentState fromState:self.currentState animation:ABCalendarPickerAnimationNone canDiffuse:NO];
+    [self changeStateTo:self.currentState fromState:self.currentState animation:ABCalendarPickerAnimationNone canDiffuse:0];
     if (sender.state == UIGestureRecognizerStateBegan)
         [self performSelector:@selector(longLeftDeepPress:) withObject:sender afterDelay:0.1];
 }
@@ -450,7 +450,7 @@
         return;
     self.deepPressingInProgress = YES;
     self.highlightedDate = [self.currentProvider dateForLongNextAnimation];
-    [self changeStateTo:self.currentState fromState:self.currentState animation:ABCalendarPickerAnimationNone canDiffuse:NO];
+    [self changeStateTo:self.currentState fromState:self.currentState animation:ABCalendarPickerAnimationNone canDiffuse:0];
     if (sender.state == UIGestureRecognizerStateBegan)
         [self performSelector:@selector(longRightDeepPress:) withObject:sender afterDelay:0.1];
 }
@@ -475,7 +475,20 @@
             {
                 NSDate * date = [self.currentProvider dateForRow:i andColumn:j];
                 
-                if (control.enabled)
+                BOOL needScroll = NO;
+                if ([(id)[self currentProvider] respondsToSelector:@selector(mainDateBegin)]
+                    && [(id)[self currentProvider] respondsToSelector:@selector(mainDateEnd)])
+                {
+                    NSDate * mainDateBegin = [[self currentProvider] mainDateBegin];
+                    NSDate * mainDateEnd = [[self currentProvider] mainDateEnd];
+                    needScroll = ([date compare:mainDateBegin] < 0)
+                              || ([date compare:mainDateEnd] > 0);
+                }
+                
+                if (!control.enabled)
+                    needScroll = YES;
+                
+                if (!needScroll)
                 {
                     if (!control.highlighted)
                     {
@@ -502,13 +515,21 @@
                 else
                 {
                     // Lets segue prev or next
-                    ABCalendarPickerAnimation animation = (i == 0) ? [self.currentProvider animationForPrev] : [self.currentProvider animationForNext];
                     
                     self.highlightedDate = date;
-                    if ([self.currentProvider rowsCount] == 1)
-                        [self changeStateTo:self.currentState fromState:self.currentState animation:ABCalendarPickerAnimationTransition canDiffuse:YES];
-                    else
-                        [self changeStateTo:self.currentState fromState:self.currentState animation:animation canDiffuse:[self.currentProvider canDiffuse]];
+                    
+                    ABCalendarPickerAnimation animation;
+                    if (i < [self.currentProvider rowsCount]/2)
+                        animation = [self.currentProvider animationForPrev];
+                    if (i == [self.currentProvider rowsCount]/2)
+                        animation = ABCalendarPickerAnimationTransition;
+                    if (i > [self.currentProvider rowsCount]/2)
+                        animation = [self.currentProvider animationForNext];
+                    
+                    [self changeStateTo:self.currentState
+                              fromState:self.currentState
+                              animation:animation
+                             canDiffuse:[self.currentProvider canDiffuse]];
                     return;
                 }
             }
@@ -556,7 +577,7 @@
 
                     self.highlightedDate = date;
                     if ([self.currentProvider rowsCount] == 1)
-                        [self changeStateTo:self.currentState fromState:self.currentState animation:ABCalendarPickerAnimationTransition canDiffuse:YES];
+                        [self changeStateTo:self.currentState fromState:self.currentState animation:ABCalendarPickerAnimationTransition canDiffuse:1];
                     else
                         [self changeStateTo:self.currentState fromState:self.currentState animation:animation canDiffuse:[self.currentProvider canDiffuse]];
                     return;
@@ -863,7 +884,7 @@ typedef void (^VoidBlock)();
 - (void)preAnimateScrollUpFromView:(UIView*)fromView
                             toView:(UIView*)toView
                       inParentView:(UIView*)parentView
-                        canDiffuse:(BOOL)canDiffuse
+                        canDiffuse:(NSInteger)canDiffuse
                  lastButtonEnabled:(BOOL)lastButtonEnabled
                       buttonHeight:(CGFloat)buttonHeight
 {
@@ -872,13 +893,13 @@ typedef void (^VoidBlock)();
     toView.center = CGPointMake(fromView.center.x,
                                 toView.center.y + 1
                                 - toView.frame.size.height
-                                + (canDiffuse && !lastButtonEnabled ? buttonHeight : 0));
+                                + (buttonHeight + (lastButtonEnabled?1:0))*canDiffuse);
 }
 
 - (void)animateScrollUpFromView:(UIView*)fromView
                          toView:(UIView*)toView
                    inParentView:(UIView*)parentView
-                     canDiffuse:(BOOL)canDiffuse
+                     canDiffuse:(NSInteger)canDiffuse
               lastButtonEnabled:(BOOL)lastButtonEnabled
                    buttonHeight:(CGFloat)buttonHeight
 {
@@ -886,13 +907,13 @@ typedef void (^VoidBlock)();
     fromView.center = CGPointMake(fromView.center.x,
                                   fromView.center.y - 1
                                   + toView.frame.size.height
-                                  - (canDiffuse && !lastButtonEnabled ? buttonHeight : 0));
+                                  - (buttonHeight + (lastButtonEnabled?1:0))*canDiffuse);
 }
 
 - (void)preAnimateScrollDownFromView:(UIView*)fromView
                               toView:(UIView*)toView
                         inParentView:(UIView*)parentView
-                          canDiffuse:(BOOL)canDiffuse
+                          canDiffuse:(NSInteger)canDiffuse
                   firstButtonEnabled:(BOOL)firstButtonEnabled
                         buttonHeight:(CGFloat)buttonHeight
 {
@@ -901,13 +922,13 @@ typedef void (^VoidBlock)();
     toView.center = CGPointMake(fromView.center.x,
                                 toView.center.y - 1
                                 + fromView.frame.size.height
-                                - (canDiffuse && !firstButtonEnabled ? buttonHeight : 0));
+                                - (buttonHeight + (firstButtonEnabled?1:0))*canDiffuse);
 }
 
 - (void)animateScrollDownFromView:(UIView*)fromView
                            toView:(UIView*)toView
                      inParentView:(UIView*)parentView
-                       canDiffuse:(BOOL)canDiffuse
+                       canDiffuse:(NSInteger)canDiffuse
                firstButtonEnabled:(BOOL)firstButtonEnabled
                      buttonHeight:(CGFloat)buttonHeight
 {
@@ -915,13 +936,13 @@ typedef void (^VoidBlock)();
     fromView.center = CGPointMake(fromView.center.x,
                                   fromView.center.y + 1
                                   - fromView.frame.size.height
-                                  + (canDiffuse && !firstButtonEnabled ? buttonHeight : 0));
+                                  + (buttonHeight + (firstButtonEnabled?1:0))*canDiffuse);
 }
 
 - (void)preAnimateScrollLeftFromView:(UIView*)fromView
                               toView:(UIView*)toView
                         inParentView:(UIView*)parentView
-                          canDiffuse:(BOOL)canDiffuse
+                          canDiffuse:(NSInteger)canDiffuse
                    lastButtonEnabled:(BOOL)lastButtonEnabled
                          buttonWidth:(CGFloat)buttonWidth
 {
@@ -929,50 +950,52 @@ typedef void (^VoidBlock)();
     [parentView addSubview:toView];
     toView.center = CGPointMake(fromView.center.x - 1
                                 - toView.frame.size.width
-                                + (canDiffuse && !lastButtonEnabled ? buttonWidth : 0),
+                                + (buttonWidth + (lastButtonEnabled?1:0))*canDiffuse,
                                 toView.center.y);
 }
 
 - (void)animateScrollLeftFromView:(UIView*)fromView
                            toView:(UIView*)toView
                      inParentView:(UIView*)parentView
-                       canDiffuse:(BOOL)canDiffuse
+                       canDiffuse:(NSInteger)canDiffuse
                 lastButtonEnabled:(BOOL)lastButtonEnabled
                       buttonWidth:(CGFloat)buttonWidth
 {
     toView.center = CGPointMake(parentView.bounds.size.width/2,(parentView.bounds.size.height)/2);
     fromView.center = CGPointMake(fromView.center.x + 1
                                   + toView.frame.size.width
-                                  - (canDiffuse && !lastButtonEnabled ? buttonWidth : 0),
+                                  - (buttonWidth + (lastButtonEnabled?1:0))*canDiffuse,
                                   fromView.center.y);
 }
 
 - (void)preAnimateScrollRightFromView:(UIView*)fromView
                                toView:(UIView*)toView
                          inParentView:(UIView*)parentView
-                           canDiffuse:(BOOL)canDiffuse
+                           canDiffuse:(NSInteger)canDiffuse
                    firstButtonEnabled:(BOOL)firstButtonEnabled
                           buttonWidth:(CGFloat)buttonWidth
 {
     toView.alpha = 0;
     [parentView addSubview:toView];
+    if (canDiffuse == 1)
+        canDiffuse = firstButtonEnabled ? 1 : 0;
     toView.center = CGPointMake(fromView.center.x + 1
                                 + fromView.frame.size.width
-                                - (canDiffuse && !firstButtonEnabled ? buttonWidth : 0),
+                                - (buttonWidth + (firstButtonEnabled?1:0))*canDiffuse,
                                 toView.center.y);
 }
 
 - (void)animateScrollRightFromView:(UIView*)fromView
                             toView:(UIView*)toView
                       inParentView:(UIView*)parentView
-                        canDiffuse:(BOOL)canDiffuse
+                        canDiffuse:(NSInteger)canDiffuse
                 firstButtonEnabled:(BOOL)firstButtonEnabled
                        buttonWidth:(CGFloat)buttonWidth
 {
     toView.center = CGPointMake(parentView.bounds.size.width/2,(parentView.bounds.size.height)/2);
     fromView.center = CGPointMake(fromView.center.x - 1
                                   - fromView.frame.size.width
-                                  + (canDiffuse && !firstButtonEnabled ? buttonWidth : 0),
+                                  + (buttonWidth + (firstButtonEnabled?1:0))*canDiffuse,
                                   fromView.center.y);
 }
 
@@ -1000,12 +1023,12 @@ typedef void (^VoidBlock)();
     if ([self animationEq:prevAnimation toDirection:gestureRecognizer.direction])
     {
         self.highlightedDate = [self.currentProvider dateForPrevAnimation];
-        [self changeStateTo:self.currentState fromState:self.currentState animation:prevAnimation canDiffuse:YES];
+        [self changeStateTo:self.currentState fromState:self.currentState animation:prevAnimation canDiffuse:1];
     }
     if ([self animationEq:nextAnimation toDirection:gestureRecognizer.direction])
     {
         self.highlightedDate = [self.currentProvider dateForNextAnimation];
-        [self changeStateTo:self.currentState fromState:self.currentState animation:nextAnimation canDiffuse:YES];
+        [self changeStateTo:self.currentState fromState:self.currentState animation:nextAnimation canDiffuse:1];
     }
     
     if (![(id)self.currentProvider respondsToSelector:@selector(dateForLongPrevAnimation)]
@@ -1019,12 +1042,12 @@ typedef void (^VoidBlock)();
     if ([self animationEq:longPrevAnimation toDirection:gestureRecognizer.direction])
     {
         self.highlightedDate = [self.currentProvider dateForLongPrevAnimation];
-        [self changeStateTo:self.currentState fromState:self.currentState animation:longPrevAnimation canDiffuse:YES];
+        [self changeStateTo:self.currentState fromState:self.currentState animation:longPrevAnimation canDiffuse:1];
     }
     if ([self animationEq:longNextAnimation toDirection:gestureRecognizer.direction])
     {
         self.highlightedDate = [self.currentProvider dateForLongNextAnimation];
-        [self changeStateTo:self.currentState fromState:self.currentState animation:longNextAnimation canDiffuse:YES];
+        [self changeStateTo:self.currentState fromState:self.currentState animation:longNextAnimation canDiffuse:1];
     }
 }
 
@@ -1053,7 +1076,7 @@ typedef void (^VoidBlock)();
 - (void)changeStateTo:(ABCalendarPickerState)toState
             fromState:(ABCalendarPickerState)fromState
             animation:(ABCalendarPickerAnimation)animation
-           canDiffuse:(BOOL)canDiffuse
+           canDiffuse:(NSInteger)canDiffuse
 {
     if (!self.userInteractionEnabled)
         return;
@@ -1239,7 +1262,9 @@ typedef void (^VoidBlock)();
         case ABCalendarPickerAnimationScrollUpFor6Rows:
             duration = 0.4;
             shift = animation - ABCalendarPickerAnimationScrollUpOrDownBase;
+            shift -= ([provider rowsCount] - 1) / 2;
             [self.mainTileView insertSubview:toView atIndex:0];
+            toView.center = CGPointMake(toView.center.x, toView.center.y + (shift-1)*buttonHeight);
             break;
 
         case ABCalendarPickerAnimationScrollDownFor1Rows:
@@ -1250,10 +1275,9 @@ typedef void (^VoidBlock)();
         case ABCalendarPickerAnimationScrollDownFor6Rows:
             duration = 0.4;
             shift = ABCalendarPickerAnimationScrollUpOrDownBase - animation;
-            toView.frame = CGRectMake(0, -(shift-1)*buttonHeight,
-                                      toView.bounds.size.width,
-                                      toView.bounds.size.height);
+            shift -= ([[self currentProvider] rowsCount] - 1) / 2;
             [self.mainTileView insertSubview:toView atIndex:0];
+            toView.center = CGPointMake(toView.center.x, toView.center.y - (shift-1)*buttonHeight);
             break;
 
         default:
@@ -1276,7 +1300,7 @@ typedef void (^VoidBlock)();
         delay = 0.1;
     }
     
-    if (!canDiffuse) // no diffusion - no transition
+    if (canDiffuse == 0) // no diffusion - no transition
     {
         toView.alpha = 1;
         fromView.alpha = 1;
@@ -1289,7 +1313,7 @@ typedef void (^VoidBlock)();
     [UIView setAnimationDelay:delay];
 	[UIView setAnimationDuration:duration];
     
-    if (canDiffuse) // no diffusion - no transition
+    if (canDiffuse > 0) // no diffusion - no transition
     {
         toView.alpha = 1;
         if (animation != ABCalendarPickerAnimationScrollUp
@@ -1366,6 +1390,7 @@ typedef void (^VoidBlock)();
         case ABCalendarPickerAnimationScrollUpFor5Rows:
         case ABCalendarPickerAnimationScrollUpFor6Rows:
             fromView.center = CGPointMake(fromView.center.x, fromView.center.y - buttonHeight*(shift-1));
+            toView.center = CGPointMake(toView.bounds.size.width/2, toView.bounds.size.height/2);
             break;
             
         case ABCalendarPickerAnimationScrollDownFor1Rows:
@@ -1431,7 +1456,7 @@ typedef void (^VoidBlock)();
 - (void)initWithDefaultProviders
 {
     [self initWithStyleProvider:[[ABCalendarPickerDefaultStyleProvider alloc] init]
-               weekdaysProvider:[[ABCalendarPickerDefaultWeekdaysProvider alloc] init]
+               weekdaysProvider:[[ABCalendarPickerDefaultTripleWeekdaysProvider alloc] init]
                    daysProvider:[[ABCalendarPickerDefaultDaysProvider alloc] init]
                  monthsProvider:[[ABCalendarPickerDefaultSeasonedMonthsProvider alloc] init]
                   yearsProvider:[[ABCalendarPickerDefaultYearsProvider alloc] init]
@@ -1489,10 +1514,22 @@ typedef void (^VoidBlock)();
             animation = ABCalendarPickerAnimationTransition;
             canDiffuse = [toProvider canDiffuse];
         }
+        
         if (state > self.currentState)
-            animation = [fromProvider animationForZoomOutToProvider:toProvider];
+        {
+            if ([(id)fromProvider respondsToSelector:@selector(animationForZoomOutToProvider:)])
+                animation = [fromProvider animationForZoomOutToProvider:toProvider];
+            //else if ([(id)toProvider respondsToSelector:@selector(animationForZoomOutFromProvider:)])
+            //    animation = [toProvider animationForZoomOutFromProvider:fromProvider];
+        }
+        
         if (state < self.currentState)
-            animation = [fromProvider animationForZoomInToProvider:toProvider];
+        {
+            if ([(id)fromProvider respondsToSelector:@selector(animationForZoomInToProvider:)])
+                animation = [fromProvider animationForZoomInToProvider:toProvider];
+            //else if ([(id)toProvider respondsToSelector:@selector(animationForZoomInFromProvider:)])
+            //    animation = [toProvider animationForZoomInFromProvider:fromProvider];
+        }
     }
     
 

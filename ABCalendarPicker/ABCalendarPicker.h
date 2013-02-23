@@ -15,6 +15,7 @@
 // Need because of main library header
 #import "ABCalendarPickerDefaultStyleProvider.h"
 #import "ABCalendarPickerDefaultWeekdaysProvider.h"
+#import "ABCalendarPickerDefaultTripleWeekdaysProvider.h"
 #import "ABCalendarPickerDefaultDaysProvider.h"
 #import "ABCalendarPickerDefaultMonthsProvider.h"
 #import "ABCalendarPickerDefaultSeasonedMonthsProvider.h"

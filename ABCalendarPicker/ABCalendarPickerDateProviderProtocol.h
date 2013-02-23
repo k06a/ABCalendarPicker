@@ -43,12 +43,15 @@ typedef enum {
 
 @property (weak,nonatomic) id<ABCalendarPickerDateOwner> dateOwner;
 
-- (BOOL)canDiffuse;
+- (NSInteger)canDiffuse;
 
 - (ABCalendarPickerAnimation)animationForPrev;
 - (ABCalendarPickerAnimation)animationForNext;
+//@optional
 - (ABCalendarPickerAnimation)animationForZoomInToProvider:(id<ABCalendarPickerDateProviderProtocol>)provider;
 - (ABCalendarPickerAnimation)animationForZoomOutToProvider:(id<ABCalendarPickerDateProviderProtocol>)provider;
+//- (ABCalendarPickerAnimation)animationForZoomInFromProvider:(id<ABCalendarPickerDateProviderProtocol>)provider;
+//- (ABCalendarPickerAnimation)animationForZoomOutFromProvider:(id<ABCalendarPickerDateProviderProtocol>)provider;
 @optional
 - (ABCalendarPickerAnimation)animationForLongPrev;
 - (ABCalendarPickerAnimation)animationForLongNext;
@@ -56,6 +59,7 @@ typedef enum {
 
 - (NSDate*)dateForPrevAnimation;
 - (NSDate*)dateForNextAnimation;
+
 @optional
 - (NSDate*)dateForLongPrevAnimation;
 - (NSDate*)dateForLongNextAnimation;
@@ -65,6 +69,11 @@ typedef enum {
 - (NSInteger)columnsCount;
 - (NSString*)columnName:(NSInteger)column;
 - (NSString*)titleText;
+
+@optional
+- (NSDate *)mainDateBegin;
+- (NSDate *)mainDateEnd;
+@required
 
 - (NSDate*)dateForRow:(NSInteger)row andColumn:(NSInteger)column;
 - (NSString*)labelForDate:(NSDate*)date;

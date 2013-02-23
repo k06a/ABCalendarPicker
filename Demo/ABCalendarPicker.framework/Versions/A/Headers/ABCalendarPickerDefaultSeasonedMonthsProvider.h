@@ -11,9 +11,9 @@
 
 @interface ABCalendarPickerDefaultSeasonedMonthsProvider : NSObject<ABCalendarPickerDateProviderProtocol>
 
-@property (unsafe_unretained,nonatomic) id<ABCalendarPickerDateOwner> dateOwner;
+@property (weak,nonatomic) id<ABCalendarPickerDateOwner> dateOwner;
 
-- (BOOL)canDiffuse;
+- (NSInteger)canDiffuse;
 
 - (ABCalendarPickerAnimation)animationForPrev;
 - (ABCalendarPickerAnimation)animationForNext;

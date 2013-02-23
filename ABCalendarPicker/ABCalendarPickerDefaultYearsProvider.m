@@ -23,7 +23,7 @@
     return self;
 }
 
-- (BOOL)canDiffuse
+- (NSInteger)canDiffuse
 {
     return NO;
 }

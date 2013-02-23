@@ -61,9 +61,9 @@
     return self;
 }
 
-- (BOOL)canDiffuse
+- (NSInteger)canDiffuse
 {
-    return YES;
+    return 1;
 }
 
 - (ABCalendarPickerAnimation)animationForPrev {

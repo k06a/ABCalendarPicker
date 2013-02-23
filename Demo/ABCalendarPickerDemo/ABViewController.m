@@ -31,20 +31,26 @@
     [self.calendarPicker setDate:[NSDate date] andState:ABCalendarPickerStateDays animated:YES];
 }
 
-- (IBAction)monthGridChange:(UISwitch *)sender
+- (IBAction)monthGridChange:(UISegmentedControl *)sender
 {
-    if (sender.on)
-        [self.calendarPicker setMonthsProvider:[[ABCalendarPickerDefaultSeasonedMonthsProvider alloc] init]];
-    else
+    if (sender.selectedSegmentIndex == 0)
         [self.calendarPicker setMonthsProvider:[[ABCalendarPickerDefaultMonthsProvider alloc] init]];
+    else
+        [self.calendarPicker setMonthsProvider:[[ABCalendarPickerDefaultSeasonedMonthsProvider alloc] init]];
 }
 
-- (IBAction)firstWeekdayChange:(UISwitch *)sender
+- (IBAction)firstWeekdayChange:(UISegmentedControl *)sender
 {
-    if (sender.on)
-        self.calendarPicker.calendar.firstWeekday = 2;
+    self.calendarPicker.calendar.firstWeekday = (sender.selectedSegmentIndex + 1)%7 + 1;
+    [self.calendarPicker updateStateAnimated:YES];
+}
+
+- (IBAction)threeWeekChanged:(UISegmentedControl *)sender
+{
+    if (sender.selectedSegmentIndex == 0)
+        self.calendarPicker.weekdaysProvider = [[ABCalendarPickerDefaultWeekdaysProvider alloc] init];
     else
-        self.calendarPicker.calendar.firstWeekday = 1;
+        self.calendarPicker.weekdaysProvider = [[ABCalendarPickerDefaultTripleWeekdaysProvider alloc] init];
     [self.calendarPicker updateStateAnimated:YES];
 }
 
