@@ -758,7 +758,7 @@ typedef void (^VoidBlock)();
     initer();
 }
 
-- (void)updateDots
+- (void)updateDotsForProvider:(id<ABCalendarPickerDateProviderProtocol>)provider
 {
     if ([[self.leftArrow.gestureRecognizers lastObject] state] == UIGestureRecognizerStateBegan
         || [[self.rightArrow.gestureRecognizers lastObject] state] == UIGestureRecognizerStateBegan
@@ -767,8 +767,6 @@ typedef void (^VoidBlock)();
     {
         return;
     }
-    
-    id<ABCalendarPickerDateProviderProtocol> provider = [self providerForState:self.currentState];
     
     for (int i = 0; i < self.controls.count; i++)
     {
@@ -830,10 +828,17 @@ typedef void (^VoidBlock)();
         }
     }
     
-    if ((provider == self.daysProvider || provider == self.weekdaysProvider)
+    if (state == ABCalendarPickerStateDays
         && [(id)self.dataSource respondsToSelector:@selector(calendarPicker:numberOfEventsForDate:onState:)])
     {
-        [self performSelector:@selector(updateDots) withObject:nil afterDelay:0.0];
+        [self performSelector:@selector(updateDotsForProvider:) withObject:provider afterDelay:0.0];
+    }
+    
+    if (state == ABCalendarPickerStateWeekdays
+        && [(id)self.dataSource respondsToSelector:@selector(calendarPicker:numberOfEventsForDate:onState:)])
+    {
+        [self updateDotsForProvider:provider];
+        //[self performSelector:@selector(updateDotsForProvider:) withObject:provider afterDelay:0.0];
     }
     
     [self.nowTileView bringSubviewToFront:self.selectedControl];
