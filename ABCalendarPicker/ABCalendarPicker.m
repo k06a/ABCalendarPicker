@@ -893,7 +893,7 @@ typedef void (^VoidBlock)();
     toView.center = CGPointMake(fromView.center.x,
                                 toView.center.y + 1
                                 - toView.frame.size.height
-                                + (buttonHeight + (lastButtonEnabled?1:0))*canDiffuse);
+                                + buttonHeight*canDiffuse);
 }
 
 - (void)animateScrollUpFromView:(UIView*)fromView
@@ -907,7 +907,7 @@ typedef void (^VoidBlock)();
     fromView.center = CGPointMake(fromView.center.x,
                                   fromView.center.y - 1
                                   + toView.frame.size.height
-                                  - (buttonHeight + (lastButtonEnabled?1:0))*canDiffuse);
+                                  - buttonHeight*canDiffuse);
 }
 
 - (void)preAnimateScrollDownFromView:(UIView*)fromView
@@ -922,7 +922,7 @@ typedef void (^VoidBlock)();
     toView.center = CGPointMake(fromView.center.x,
                                 toView.center.y - 1
                                 + fromView.frame.size.height
-                                - (buttonHeight + (firstButtonEnabled?1:0))*canDiffuse);
+                                - buttonHeight*canDiffuse);
 }
 
 - (void)animateScrollDownFromView:(UIView*)fromView
@@ -936,7 +936,7 @@ typedef void (^VoidBlock)();
     fromView.center = CGPointMake(fromView.center.x,
                                   fromView.center.y + 1
                                   - fromView.frame.size.height
-                                  + (buttonHeight + (firstButtonEnabled?1:0))*canDiffuse);
+                                  + buttonHeight*canDiffuse);
 }
 
 - (void)preAnimateScrollLeftFromView:(UIView*)fromView
@@ -950,7 +950,7 @@ typedef void (^VoidBlock)();
     [parentView addSubview:toView];
     toView.center = CGPointMake(fromView.center.x - 1
                                 - toView.frame.size.width
-                                + (buttonWidth + (lastButtonEnabled?1:0))*canDiffuse,
+                                + buttonWidth*canDiffuse,
                                 toView.center.y);
 }
 
@@ -964,7 +964,7 @@ typedef void (^VoidBlock)();
     toView.center = CGPointMake(parentView.bounds.size.width/2,(parentView.bounds.size.height)/2);
     fromView.center = CGPointMake(fromView.center.x + 1
                                   + toView.frame.size.width
-                                  - (buttonWidth + (lastButtonEnabled?1:0))*canDiffuse,
+                                  - buttonWidth*canDiffuse,
                                   fromView.center.y);
 }
 
