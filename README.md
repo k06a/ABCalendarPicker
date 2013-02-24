@@ -53,9 +53,8 @@ Here are two videos, short and long. Short video shows component features. Long 
 
 ABCalendarPicker short demo: [http://youtu.be/d2PGFiO_jk4](http://youtu.be/d2PGFiO_jk4)
 
-ABCalendarPicker 3 weeks mode: [http://youtu.be/q2_PsnBsXeU
-](http://youtu.be/q2_PsnBsXeU
-)
+ABCalendarPicker 3 weeks mode: [http://youtu.be/1B0X4Zqy8QY
+](http://youtu.be/1B0X4Zqy8QY)
 
 Mr.Calendario long demo: [http://youtu.be/Hz3D4Q5CDuQ](http://youtu.be/Hz3D4Q5CDuQ)
 

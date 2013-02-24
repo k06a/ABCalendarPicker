@@ -490,6 +490,12 @@
                     needScrollNext = ([date compare:mainDateEnd] > 0);
                 }
                 
+                if (!control.enabled && !needScrollPrev && !needScrollNext)
+                {
+                    needScrollPrev = YES;
+                    needScrollNext = YES;
+                }
+                
                 if (!needScrollPrev && !needScrollNext)
                 {
                     if (!control.highlighted)
@@ -517,11 +523,12 @@
                 else
                 {
                     // Lets segue prev or next
-                    
                     self.highlightedDate = date;
                     
                     ABCalendarPickerAnimation animation;
-                    if (needScrollPrev)
+                    if (needScrollPrev && needScrollNext)
+                        animation = ABCalendarPickerAnimationTransition;
+                    else if (needScrollPrev)
                         animation = [self.currentProvider animationForPrev];
                     else if (needScrollNext)
                         animation = [self.currentProvider animationForNext];
