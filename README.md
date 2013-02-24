@@ -26,13 +26,11 @@ This library project is "iOS Static Library" and made with this instruction: [ht
 
 ###Get compiled framework and bundle
 
-1. Get it from ```/Demo``` subdirectory or goto 2.
+1. Compile project _ABCalendarPicker.xcodeproj_
 
-2. Compile project _ABCalendarPicker.xcodeproj_
+2. Open ```~/Library/Developer/Xcode/DerivedData``` in Finder by pressing ⇧⌘G
 
-3. Open ```~/Library/Developer/Xcode/DerivedData``` in Finder by pressing ⇧⌘G
-
-4. Find _ABCalendarPicker.framework_ and _ABCalendarPicker.bundle_ in ```.../ABCalendarPicker-xxxxxxxxxxx/Build/Products/```
+3. Find _ABCalendarPicker.framework_ and _ABCalendarPicker.bundle_ in ```.../ABCalendarPicker-xxxxxxxxxxx/Build/Products/```
 
 ###Add framework and bundle to your project
 

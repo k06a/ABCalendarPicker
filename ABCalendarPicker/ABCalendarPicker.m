@@ -475,7 +475,10 @@
             {
                 NSDate * date = [self.currentProvider dateForRow:i andColumn:j];
                 
+                BOOL needScrollPrev = NO;
+                BOOL needScrollNext = NO;
                 BOOL needScroll = NO;
+                
                 if ([(id)[self currentProvider] respondsToSelector:@selector(mainDateBegin)]
                     && [(id)[self currentProvider] respondsToSelector:@selector(mainDateEnd)])
                 {
@@ -483,6 +486,8 @@
                     NSDate * mainDateEnd = [[self currentProvider] mainDateEnd];
                     needScroll = ([date compare:mainDateBegin] < 0)
                               || ([date compare:mainDateEnd] > 0);
+                    needScrollPrev = ([date compare:mainDateBegin] < 0);
+                    needScrollNext = ([date compare:mainDateEnd] > 0);
                 }
                 
                 if (!control.enabled)
@@ -519,12 +524,12 @@
                     self.highlightedDate = date;
                     
                     ABCalendarPickerAnimation animation;
-                    if (i < [self.currentProvider rowsCount]/2)
+                    if (needScrollPrev)
                         animation = [self.currentProvider animationForPrev];
-                    if (i == [self.currentProvider rowsCount]/2)
-                        animation = ABCalendarPickerAnimationTransition;
-                    if (i > [self.currentProvider rowsCount]/2)
+                    else if (needScrollNext)
                         animation = [self.currentProvider animationForNext];
+                    else
+                        animation = ABCalendarPickerAnimationTransition;
                     
                     [self changeStateTo:self.currentState
                               fromState:self.currentState
@@ -982,11 +987,9 @@ typedef void (^VoidBlock)();
 {
     toView.alpha = 0;
     [parentView addSubview:toView];
-    if (canDiffuse == 1)
-        canDiffuse = firstButtonEnabled ? 1 : 0;
     toView.center = CGPointMake(fromView.center.x + 1
                                 + fromView.frame.size.width
-                                - (buttonWidth + (firstButtonEnabled?1:0))*canDiffuse,
+                                - buttonWidth*canDiffuse,
                                 toView.center.y);
 }
 
@@ -1000,7 +1003,7 @@ typedef void (^VoidBlock)();
     toView.center = CGPointMake(parentView.bounds.size.width/2,(parentView.bounds.size.height)/2);
     fromView.center = CGPointMake(fromView.center.x - 1
                                   - fromView.frame.size.width
-                                  + (buttonWidth + (firstButtonEnabled?1:0))*canDiffuse,
+                                  + buttonWidth*canDiffuse,
                                   fromView.center.y);
 }
 

@@ -66,6 +66,16 @@
     return 1;
 }
 
+- (NSDate *)mainDateBegin
+{
+    return [self dateForRow:1 andColumn:0];
+}
+
+- (NSDate *)mainDateEnd
+{
+    return [self dateForRow:0 andColumn:4];
+}
+
 - (ABCalendarPickerAnimation)animationForPrev {
     return ABCalendarPickerAnimationScrollLeft;
 }
