@@ -12,7 +12,7 @@ Week view:
 
 <img src="https://raw.github.com/k06a/ABCalendarPicker/master/week-grid-screenshot.png" width="30%" />
 
-Three weeks view:
+Three weeks view (thanks @ChrisJCraft for idea):
 
 <img src="https://raw.github.com/k06a/ABCalendarPicker/master/3weeks-grid-screenshot.png" width="30%" />
 
@@ -51,7 +51,11 @@ This library project is "iOS Static Library" and made with this instruction: [ht
 ##Demo video
 Here are two videos, short and long. Short video shows component features. Long video shows commertial app features on iPhone 4 (really the slowest iPhone for animations).
 
-ABCalendarComponent short demo: [http://youtu.be/d2PGFiO_jk4](http://youtu.be/d2PGFiO_jk4)
+ABCalendarPicker short demo: [http://youtu.be/d2PGFiO_jk4](http://youtu.be/d2PGFiO_jk4)
+
+ABCalendarPicker 3 weeks mode: [http://youtu.be/q2_PsnBsXeU
+](http://youtu.be/q2_PsnBsXeU
+)
 
 Mr.Calendario long demo: [http://youtu.be/Hz3D4Q5CDuQ](http://youtu.be/Hz3D4Q5CDuQ)
 
