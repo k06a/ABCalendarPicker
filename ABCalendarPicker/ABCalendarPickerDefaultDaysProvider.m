@@ -38,6 +38,31 @@
     return 1;
 }
 
+- (NSDate *)mainDateBegin
+{
+    NSDateComponents * comps = [self.calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:[self.dateOwner highlightedDate]];
+    comps.day = 1;
+    return [self.calendar dateFromComponents:comps];
+}
+
+- (NSDate *)mainDateEnd
+{
+    NSDateComponents * comps = [self.calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit|NSHourCalendarUnit|NSMinuteCalendarUnit|NSSecondCalendarUnit fromDate:[self.dateOwner highlightedDate]];
+    comps.day = 1;
+    
+    NSDateComponents * month = [[NSDateComponents alloc] init];
+    month.month = 1;
+
+    NSDateComponents * mday = [[NSDateComponents alloc] init];
+    mday.day = -1;
+    
+    NSDate * date = [self.calendar dateFromComponents:comps];
+    date = [self.calendar dateByAddingComponents:month toDate:date options:0];
+    date = [self.calendar dateByAddingComponents:mday toDate:date options:0];
+    
+    return date;
+}
+
 - (ABCalendarPickerAnimation)animationForPrev {
     return ABCalendarPickerAnimationScrollUp;
 }

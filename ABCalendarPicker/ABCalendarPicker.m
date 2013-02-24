@@ -134,6 +134,9 @@
 
 - (void)setHighlightedDate:(NSDate *)highlightedDate
 {
+    NSTimeInterval interval = highlightedDate.timeIntervalSince1970;
+    interval -= fmod(interval, 60);
+    highlightedDate = [NSDate dateWithTimeIntervalSince1970:interval];
     _highlightedDate = highlightedDate;
     
     if ([self providerForState:self.currentState] != nil)
@@ -477,23 +480,17 @@
                 
                 BOOL needScrollPrev = NO;
                 BOOL needScrollNext = NO;
-                BOOL needScroll = NO;
                 
                 if ([(id)[self currentProvider] respondsToSelector:@selector(mainDateBegin)]
                     && [(id)[self currentProvider] respondsToSelector:@selector(mainDateEnd)])
                 {
                     NSDate * mainDateBegin = [[self currentProvider] mainDateBegin];
                     NSDate * mainDateEnd = [[self currentProvider] mainDateEnd];
-                    needScroll = ([date compare:mainDateBegin] < 0)
-                              || ([date compare:mainDateEnd] > 0);
                     needScrollPrev = ([date compare:mainDateBegin] < 0);
                     needScrollNext = ([date compare:mainDateEnd] > 0);
                 }
                 
-                if (!control.enabled)
-                    needScroll = YES;
-                
-                if (!needScroll)
+                if (!needScrollPrev && !needScrollNext)
                 {
                     if (!control.highlighted)
                     {
