@@ -1028,12 +1028,12 @@ typedef void (^VoidBlock)();
     if ([self animationEq:prevAnimation toDirection:gestureRecognizer.direction])
     {
         self.highlightedDate = [self.currentProvider dateForPrevAnimation];
-        [self changeStateTo:self.currentState fromState:self.currentState animation:prevAnimation canDiffuse:1];
+        [self changeStateTo:self.currentState fromState:self.currentState animation:prevAnimation canDiffuse:[self.currentProvider canDiffuse]];
     }
     if ([self animationEq:nextAnimation toDirection:gestureRecognizer.direction])
     {
         self.highlightedDate = [self.currentProvider dateForNextAnimation];
-        [self changeStateTo:self.currentState fromState:self.currentState animation:nextAnimation canDiffuse:1];
+        [self changeStateTo:self.currentState fromState:self.currentState animation:nextAnimation canDiffuse:[self.currentProvider canDiffuse]];
     }
     
     if (![(id)self.currentProvider respondsToSelector:@selector(dateForLongPrevAnimation)]
@@ -1047,12 +1047,12 @@ typedef void (^VoidBlock)();
     if ([self animationEq:longPrevAnimation toDirection:gestureRecognizer.direction])
     {
         self.highlightedDate = [self.currentProvider dateForLongPrevAnimation];
-        [self changeStateTo:self.currentState fromState:self.currentState animation:longPrevAnimation canDiffuse:1];
+        [self changeStateTo:self.currentState fromState:self.currentState animation:longPrevAnimation canDiffuse:[self.currentProvider canDiffuse]];
     }
     if ([self animationEq:longNextAnimation toDirection:gestureRecognizer.direction])
     {
         self.highlightedDate = [self.currentProvider dateForLongNextAnimation];
-        [self changeStateTo:self.currentState fromState:self.currentState animation:longNextAnimation canDiffuse:1];
+        [self changeStateTo:self.currentState fromState:self.currentState animation:longNextAnimation canDiffuse:[self.currentProvider canDiffuse]];
     }
 }
 
