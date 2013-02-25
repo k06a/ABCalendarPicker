@@ -12,6 +12,10 @@ Week view:
 
 <img src="https://raw.github.com/k06a/ABCalendarPicker/master/week-grid-screenshot.png" width="30%" />
 
+Three weeks view (thanks @ChrisJCraft for idea):
+
+<img src="https://raw.github.com/k06a/ABCalendarPicker/master/3weeks-grid-screenshot.png" width="30%" />
+
 Seasoned month view:
 
 <img src="https://raw.github.com/k06a/ABCalendarPicker/master/year-grid-screenshot.png" width="30%" />
@@ -22,13 +26,11 @@ This library project is "iOS Static Library" and made with this instruction: [ht
 
 ###Get compiled framework and bundle
 
-1. Get it from ```/Demo``` subdirectory or goto 2.
+1. Compile project _ABCalendarPicker.xcodeproj_
 
-2. Compile project _ABCalendarPicker.xcodeproj_
+2. Open ```~/Library/Developer/Xcode/DerivedData``` in Finder by pressing ⇧⌘G
 
-3. Open ```~/Library/Developer/Xcode/DerivedData``` in Finder by pressing ⇧⌘G
-
-4. Find _ABCalendarPicker.framework_ and _ABCalendarPicker.bundle_ in ```.../ABCalendarPicker-xxxxxxxxxxx/Build/Products/```
+3. Find _ABCalendarPicker.framework_ and _ABCalendarPicker.bundle_ in ```.../ABCalendarPicker-xxxxxxxxxxx/Build/Products/```
 
 ###Add framework and bundle to your project
 
@@ -49,7 +51,10 @@ This library project is "iOS Static Library" and made with this instruction: [ht
 ##Demo video
 Here are two videos, short and long. Short video shows component features. Long video shows commertial app features on iPhone 4 (really the slowest iPhone for animations).
 
-ABCalendarComponent short demo: [http://youtu.be/d2PGFiO_jk4](http://youtu.be/d2PGFiO_jk4)
+ABCalendarPicker short demo: [http://youtu.be/d2PGFiO_jk4](http://youtu.be/d2PGFiO_jk4)
+
+ABCalendarPicker 3 weeks mode: [http://youtu.be/1B0X4Zqy8QY
+](http://youtu.be/1B0X4Zqy8QY)
 
 Mr.Calendario long demo: [http://youtu.be/Hz3D4Q5CDuQ](http://youtu.be/Hz3D4Q5CDuQ)
 

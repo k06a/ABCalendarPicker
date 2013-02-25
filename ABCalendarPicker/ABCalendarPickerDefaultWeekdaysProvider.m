@@ -54,9 +54,9 @@
     return self;
 }
 
-- (BOOL)canDiffuse
+- (NSInteger)canDiffuse
 {
-    return NO;
+    return 0;
 }
 
 - (ABCalendarPickerAnimation)animationForPrev {
@@ -110,7 +110,7 @@
 - (NSDate*)dateForRow:(NSInteger)row
             andColumn:(NSInteger)column
 {
-    NSInteger index = column + 1;
+    NSInteger index = column + 1 + row*7;
     NSInteger highlightedDay = [self.calendar ordinalityOfUnit:NSDayCalendarUnit inUnit:NSWeekCalendarUnit forDate:[self.dateOwner highlightedDate]];
     NSInteger highlightedWeekday = [self.calendar ordinalityOfUnit:NSWeekdayCalendarUnit inUnit:NSWeekCalendarUnit forDate:[self.dateOwner highlightedDate]];
     NSInteger firstWeekday = (highlightedWeekday - highlightedDay + 35)%7 + 1;

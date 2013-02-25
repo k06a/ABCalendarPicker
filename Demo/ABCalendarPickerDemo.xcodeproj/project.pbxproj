@@ -18,10 +18,34 @@
 		254756EF16D33DE600CDD004 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 254756EE16D33DE600CDD004 /* Default-568h@2x.png */; };
 		254756F216D33DE600CDD004 /* ABViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 254756F116D33DE600CDD004 /* ABViewController.m */; };
 		254756F516D33DE600CDD004 /* ABViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 254756F316D33DE600CDD004 /* ABViewController.xib */; };
-		254756FC16D33F3700CDD004 /* ABCalendarPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 254756FB16D33F3700CDD004 /* ABCalendarPicker.framework */; };
-		254756FF16D342B400CDD004 /* ABCalendarPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 254756FE16D342B400CDD004 /* ABCalendarPicker.bundle */; };
 		2547570216D3483600CDD004 /* CalendarShadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 2547570116D3483600CDD004 /* CalendarShadow.png */; };
+		258FACA916D9D457007EE6C6 /* libABCalendarPicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 258FACA316D9D3AD007EE6C6 /* libABCalendarPicker.a */; };
+		258FACAB16D9D4F3007EE6C6 /* ABCalendarPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 258FACA716D9D3AD007EE6C6 /* ABCalendarPicker.bundle */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		258FACA216D9D3AD007EE6C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 258FAC9B16D9D3AD007EE6C6 /* ABCalendarPicker.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25DDA86C15AA22A80049B532;
+			remoteInfo = ABCalendarPicker;
+		};
+		258FACA416D9D3AD007EE6C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 258FAC9B16D9D3AD007EE6C6 /* ABCalendarPicker.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25DDA87D15AA22A80049B532;
+			remoteInfo = ABCalendarPickerTests;
+		};
+		258FACA616D9D3AD007EE6C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 258FAC9B16D9D3AD007EE6C6 /* ABCalendarPicker.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25DDA8DB15AA2A380049B532;
+			remoteInfo = ABCalendarPickerBundle;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		254756D516D33DE600CDD004 /* ABCalendarPickerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ABCalendarPickerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,9 +64,8 @@
 		254756F016D33DE600CDD004 /* ABViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABViewController.h; sourceTree = "<group>"; };
 		254756F116D33DE600CDD004 /* ABViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABViewController.m; sourceTree = "<group>"; };
 		254756F416D33DE600CDD004 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ABViewController.xib; sourceTree = "<group>"; };
-		254756FB16D33F3700CDD004 /* ABCalendarPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ABCalendarPicker.framework; sourceTree = "<group>"; };
-		254756FE16D342B400CDD004 /* ABCalendarPicker.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ABCalendarPicker.bundle; sourceTree = SOURCE_ROOT; };
 		2547570116D3483600CDD004 /* CalendarShadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CalendarShadow.png; sourceTree = "<group>"; };
+		258FAC9B16D9D3AD007EE6C6 /* ABCalendarPicker.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABCalendarPicker.xcodeproj; path = ../ABCalendarPicker.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,10 +73,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				258FACA916D9D457007EE6C6 /* libABCalendarPicker.a in Frameworks */,
 				254756D916D33DE600CDD004 /* UIKit.framework in Frameworks */,
 				254756DB16D33DE600CDD004 /* Foundation.framework in Frameworks */,
 				254756DD16D33DE600CDD004 /* CoreGraphics.framework in Frameworks */,
-				254756FC16D33F3700CDD004 /* ABCalendarPicker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +86,7 @@
 		254756CC16D33DE600CDD004 = {
 			isa = PBXGroup;
 			children = (
+				258FAC9B16D9D3AD007EE6C6 /* ABCalendarPicker.xcodeproj */,
 				254756DE16D33DE600CDD004 /* ABCalendarPickerDemo */,
 				254756D716D33DE600CDD004 /* Frameworks */,
 				254756D616D33DE600CDD004 /* Products */,
@@ -80,7 +104,6 @@
 		254756D716D33DE600CDD004 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				254756FB16D33F3700CDD004 /* ABCalendarPicker.framework */,
 				254756D816D33DE600CDD004 /* UIKit.framework */,
 				254756DA16D33DE600CDD004 /* Foundation.framework */,
 				254756DC16D33DE600CDD004 /* CoreGraphics.framework */,
@@ -120,9 +143,18 @@
 			isa = PBXGroup;
 			children = (
 				2547570116D3483600CDD004 /* CalendarShadow.png */,
-				254756FE16D342B400CDD004 /* ABCalendarPicker.bundle */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		258FAC9C16D9D3AD007EE6C6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				258FACA316D9D3AD007EE6C6 /* libABCalendarPicker.a */,
+				258FACA516D9D3AD007EE6C6 /* ABCalendarPickerTests.octest */,
+				258FACA716D9D3AD007EE6C6 /* ABCalendarPicker.bundle */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,12 +197,42 @@
 			mainGroup = 254756CC16D33DE600CDD004;
 			productRefGroup = 254756D616D33DE600CDD004 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 258FAC9C16D9D3AD007EE6C6 /* Products */;
+					ProjectRef = 258FAC9B16D9D3AD007EE6C6 /* ABCalendarPicker.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				254756D416D33DE600CDD004 /* ABCalendarPickerDemo */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		258FACA316D9D3AD007EE6C6 /* libABCalendarPicker.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libABCalendarPicker.a;
+			remoteRef = 258FACA216D9D3AD007EE6C6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		258FACA516D9D3AD007EE6C6 /* ABCalendarPickerTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ABCalendarPickerTests.octest;
+			remoteRef = 258FACA416D9D3AD007EE6C6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		258FACA716D9D3AD007EE6C6 /* ABCalendarPicker.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ABCalendarPicker.bundle;
+			remoteRef = 258FACA616D9D3AD007EE6C6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		254756D316D33DE600CDD004 /* Resources */ = {
@@ -182,8 +244,8 @@
 				254756ED16D33DE600CDD004 /* Default@2x.png in Resources */,
 				254756EF16D33DE600CDD004 /* Default-568h@2x.png in Resources */,
 				254756F516D33DE600CDD004 /* ABViewController.xib in Resources */,
-				254756FF16D342B400CDD004 /* ABCalendarPicker.bundle in Resources */,
 				2547570216D3483600CDD004 /* CalendarShadow.png in Resources */,
+				258FACAB16D9D4F3007EE6C6 /* ABCalendarPicker.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,7 +309,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -271,7 +333,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -288,7 +350,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ABCalendarPickerDemo/ABCalendarPickerDemo-Prefix.pch";
 				INFOPLIST_FILE = "ABCalendarPickerDemo/ABCalendarPickerDemo-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -304,7 +366,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ABCalendarPickerDemo/ABCalendarPickerDemo-Prefix.pch";
 				INFOPLIST_FILE = "ABCalendarPickerDemo/ABCalendarPickerDemo-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

@@ -13,7 +13,7 @@
 
 @property (weak,nonatomic) id<ABCalendarPickerDateOwner> dateOwner;
 
-- (BOOL)canDiffuse;
+- (NSInteger)canDiffuse;
 
 - (ABCalendarPickerAnimation)animationForPrev;
 - (ABCalendarPickerAnimation)animationForNext;
