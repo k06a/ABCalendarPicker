@@ -144,7 +144,8 @@
     //    return [name substringToIndex:name.length-1];
     //return name;
     [self.dateFormatter setDateFormat:@"LLL"];
-    return [[self.dateFormatter stringFromDate:date] substringToIndex:3];
+    NSString * str = [self.dateFormatter stringFromDate:date];
+    return [str substringToIndex:MIN(3,str.length)];
 }
 
 - (UIControlState)controlStateForDate:(NSDate*)date
