@@ -11,8 +11,8 @@
 
 @protocol ABCalendarPickerDataSourceProtocol
 
-- (NSArray*)calendarPicker:(ABCalendarPicker*)calendarPicker
-             eventsForDate:(NSDate*)date
-                   onState:(ABCalendarPickerState)state;
+- (NSInteger)calendarPicker:(ABCalendarPicker *)calendarPicker
+      numberOfEventsForDate:(NSDate *)date
+                    onState:(ABCalendarPickerState)state;
 
 @end

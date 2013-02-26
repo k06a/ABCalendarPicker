@@ -22,7 +22,7 @@
 - (void)calendarPicker:(ABCalendarPicker*)calendarPicker
  postUpdateForCellView:(UIControl*)control
         onControlState:(UIControlState)controlState
-            withEvents:(NSArray*)events
+            withEvents:(NSInteger)eventsCount
               andState:(ABCalendarPickerState)state;
 
 @property (nonatomic) UIImage * patternImageForGradientBar;

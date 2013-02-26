@@ -321,7 +321,7 @@
 - (void)calendarPicker:(ABCalendarPicker*)calendarPicker
  postUpdateForCellView:(UIControl*)control
         onControlState:(UIControlState)controlState
-            withEvents:(NSArray*)events
+            withEvents:(NSInteger)eventsCount
               andState:(ABCalendarPickerState)state
 {
     if (state != ABCalendarPickerStateDays
@@ -329,7 +329,7 @@
         return;
     
     UIMyButton * button = (UIMyButton *)control;
-    button.numberOfDots = MIN(events.count,6);
+    button.numberOfDots = MIN(eventsCount,6);
 }
 
 - (id)init

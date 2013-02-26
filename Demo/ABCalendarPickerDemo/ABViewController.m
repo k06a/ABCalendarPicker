@@ -9,7 +9,7 @@
 #import <ABCalendarPicker/ABCalendarPicker.h>
 #import "ABViewController.h"
 
-@interface ABViewController () <ABCalendarPickerDelegateProtocol>
+@interface ABViewController () <ABCalendarPickerDelegateProtocol,ABCalendarPickerDataSourceProtocol>
 @property (assign, nonatomic) IBOutlet ABCalendarPicker *calendarPicker;
 @property (strong, nonatomic) UIImageView * calendarShadow;
 @end
@@ -61,11 +61,26 @@
                                            self.calendarShadow.frame.size.height);
 }
 
+- (NSInteger)calendarPicker:(ABCalendarPicker*)calendarPicker
+      numberOfEventsForDate:(NSDate*)date
+                    onState:(ABCalendarPickerState)state
+{
+    if (state != ABCalendarPickerStateDays
+        && state != ABCalendarPickerStateWeekdays)
+    {
+        return 0;
+    }
+    
+    int numOfEvents = ((int)[date timeIntervalSince1970]/60/60/24) % 4;
+    return numOfEvents;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     self.calendarPicker.delegate = self;
+    self.calendarPicker.dataSource = self;
     [self.view addSubview:self.calendarShadow];
     [self calendarPicker:self.calendarPicker animateNewHeight:self.calendarPicker.bounds.size.height];
 

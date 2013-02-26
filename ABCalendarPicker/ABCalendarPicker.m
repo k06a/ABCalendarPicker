@@ -786,9 +786,9 @@ typedef void (^VoidBlock)();
             
             NSDate * buttonDate = [provider dateForRow:i andColumn:j];
             UIControlState controlState = [provider controlStateForDate:buttonDate];
-            NSArray * events = [self.dataSource calendarPicker:self eventsForDate:buttonDate onState:self.currentState];
+            NSInteger eventsCount = [self.dataSource calendarPicker:self numberOfEventsForDate:buttonDate onState:self.currentState];
             
-            [self.styleProvider calendarPicker:self postUpdateForCellView:control onControlState:controlState withEvents:events andState:self.currentState];
+            [self.styleProvider calendarPicker:self postUpdateForCellView:control onControlState:controlState withEvents:eventsCount andState:self.currentState];
         }
     }
     
