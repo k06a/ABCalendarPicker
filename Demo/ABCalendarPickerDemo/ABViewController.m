@@ -64,15 +64,13 @@
                           delay:0.0
                         options:(UIViewAnimationOptionCurveEaseInOut)
                      animations:^{
+                         CGFloat y = self.view.bounds.size.height;
+                         CGFloat delta = self.configPanel.bounds.size.height / 2;
                          if (self.configPanel.center.y < self.view.bounds.size.height)
-                             self.configPanel.center = CGPointMake(self.configPanel.center.x,
-                                                                   self.view.bounds.size.height
-                                                                   + self.configPanel.bounds.size.height/2);
+                             y += delta;
                          else
-                             self.configPanel.center = CGPointMake(self.configPanel.center.x,
-                                                                   self.view.bounds.size.height
-                                                                   - self.configPanel.bounds.size.height/2);
-
+                             y -= delta;
+                         self.configPanel.center = CGPointMake(self.configPanel.center.x, y);
                      } completion:^(BOOL finished) {
                          self.view.userInteractionEnabled = YES;
                      }];
@@ -106,7 +104,10 @@
     [self.calendarPicker updateStateAnimated:YES];
 }
 
-- (void)calendarPicker:(ABCalendarPicker *)calendarPicker animateNewHeight:(CGFloat)height
+#pragma mark - ABCalendarPicker delegate and dataSource
+
+- (void)calendarPicker:(ABCalendarPicker *)calendarPicker
+      animateNewHeight:(CGFloat)height
 {
     self.calendarShadow.frame = CGRectMake(0,CGRectGetMaxY(self.calendarPicker.frame),
                                            self.calendarPicker.frame.size.width,
@@ -129,20 +130,24 @@
     return [[self eventsForDate:date] count];
 }
 
-- (void)calendarPicker:(ABCalendarPicker *)calendarPicker dateSelected:(NSDate *)date withState:(ABCalendarPickerState)state
+- (void)calendarPicker:(ABCalendarPicker *)calendarPicker
+          dateSelected:(NSDate *)date
+             withState:(ABCalendarPickerState)state
 {
     [self.eventsTable reloadData];
 }
 
 #pragma mark - UITableView delegate and dataSource
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section
 {
     NSArray * events = [self eventsForDate:self.calendarPicker.highlightedDate];
     return [events count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"CELL_EVENT"];
     if (cell == nil)
