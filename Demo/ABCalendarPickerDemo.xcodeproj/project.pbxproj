@@ -21,6 +21,7 @@
 		2547570216D3483600CDD004 /* CalendarShadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 2547570116D3483600CDD004 /* CalendarShadow.png */; };
 		258FACA916D9D457007EE6C6 /* libABCalendarPicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 258FACA316D9D3AD007EE6C6 /* libABCalendarPicker.a */; };
 		258FACAB16D9D4F3007EE6C6 /* ABCalendarPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 258FACA716D9D3AD007EE6C6 /* ABCalendarPicker.bundle */; };
+		25CDE6FC16DE480400D105AD /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25CDE6FB16DE480400D105AD /* EventKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		254756F416D33DE600CDD004 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ABViewController.xib; sourceTree = "<group>"; };
 		2547570116D3483600CDD004 /* CalendarShadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CalendarShadow.png; sourceTree = "<group>"; };
 		258FAC9B16D9D3AD007EE6C6 /* ABCalendarPicker.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABCalendarPicker.xcodeproj; path = ../ABCalendarPicker.xcodeproj; sourceTree = "<group>"; };
+		25CDE6FB16DE480400D105AD /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25CDE6FC16DE480400D105AD /* EventKit.framework in Frameworks */,
 				258FACA916D9D457007EE6C6 /* libABCalendarPicker.a in Frameworks */,
 				254756D916D33DE600CDD004 /* UIKit.framework in Frameworks */,
 				254756DB16D33DE600CDD004 /* Foundation.framework in Frameworks */,
@@ -104,6 +107,7 @@
 		254756D716D33DE600CDD004 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				25CDE6FB16DE480400D105AD /* EventKit.framework */,
 				254756D816D33DE600CDD004 /* UIKit.framework */,
 				254756DA16D33DE600CDD004 /* Foundation.framework */,
 				254756DC16D33DE600CDD004 /* CoreGraphics.framework */,
@@ -350,7 +354,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ABCalendarPickerDemo/ABCalendarPickerDemo-Prefix.pch";
 				INFOPLIST_FILE = "ABCalendarPickerDemo/ABCalendarPickerDemo-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -366,7 +370,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ABCalendarPickerDemo/ABCalendarPickerDemo-Prefix.pch";
 				INFOPLIST_FILE = "ABCalendarPickerDemo/ABCalendarPickerDemo-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
