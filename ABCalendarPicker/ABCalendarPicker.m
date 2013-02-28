@@ -119,7 +119,10 @@
 
 - (UIImage *)imageNamed:(NSString*)name
 {
-    return [UIImage imageWithContentsOfFile:[[self frameworkBundle] pathForResource:name ofType:@"png"]];
+    if ([self frameworkBundle])
+        return [UIImage imageWithContentsOfFile:[[self frameworkBundle] pathForResource:name ofType:@"png"]];
+    else
+        return [UIImage imageNamed:name];
 }
 
 #pragma mark -
