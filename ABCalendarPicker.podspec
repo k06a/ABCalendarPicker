@@ -8,6 +8,6 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/k06a/ABCalendarPicker.git", :tag => '1.0.0' }
   s.platform     = :ios, '5.0'
   s.source_files = 'ABCalendarPicker/**/*.{h,m}'
-  s.resources	  = 'ABCalendarPicker/**/*.{png}'
+  s.resources    = 'ABCalendarPicker/**/*.{png}'
   s.requires_arc = true
 end
