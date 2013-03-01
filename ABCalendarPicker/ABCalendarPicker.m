@@ -1,9 +1,9 @@
 //
 //  ABCalendarPicker.m
-//  CalendarPickerDemo
+//  ABCalendarPicker
 //
 //  Created by Anton Bukov on 25.06.12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 Anton Bukov. All rights reserved.
 //
 
 #import <QuartzCore/CAAnimation.h>
@@ -73,7 +73,6 @@
 @synthesize highlightedDate = _highlightedDate;
 @synthesize calendar = _calendar;
 @synthesize bottomExpanding = _bottomExpanding;
-@synthesize maxNumberOfDots = _maxNumberOfDots;
 @synthesize swipeNavigationEnabled = _swipeNavigationEnabled;
 
 @synthesize controls = _controls;

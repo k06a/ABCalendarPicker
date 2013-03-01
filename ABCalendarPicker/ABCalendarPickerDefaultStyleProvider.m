@@ -2,8 +2,8 @@
 //  ABCalendarPickerDefaultStyleProvider.m
 //  ABCalendarPicker
 //
-//  Created by Антон Буков on 23.07.12.
-//  Copyright (c) 2012 Happy Nation Project. All rights reserved.
+//  Created by Anton Bukov on 01.07.12.
+//  Copyright (c) 2013 Anton Bukov. All rights reserved.
 //
 
 #import <QuartzCore/QuartzCore.h>
@@ -332,14 +332,14 @@
         return;
     
     UIMyButton * button = (UIMyButton *)control;
-    button.numberOfDots = MIN(eventsCount,6);
+    button.numberOfDots = MIN(self.maxNumberOfDots,eventsCount);
 }
 
 - (id)init
 {
     if (self = [super init])
     {
-        self.maxNumberOfDots = 5;
+        self.maxNumberOfDots = 6;
     }
     return self;
 }

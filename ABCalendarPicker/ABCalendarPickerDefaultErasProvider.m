@@ -1,9 +1,9 @@
 //
 //  ABCalendarPickerDefaultEraProvider.m
-//  CalendarPickerDemo
+//  ABCalendarPicker
 //
 //  Created by Anton Bukov on 01.07.12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 Anton Bukov. All rights reserved.
 //
 
 #import "ABCalendarPickerDefaultErasProvider.h"

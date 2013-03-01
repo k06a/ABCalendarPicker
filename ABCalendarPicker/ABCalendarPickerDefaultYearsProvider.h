@@ -1,9 +1,9 @@
 //
 //  ABCalendarPickerDefaultYearsProvider.h
-//  CalendarPickerDemo
+//  ABCalendarPicker
 //
 //  Created by Anton Bukov on 29.06.12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 Anton Bukov. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

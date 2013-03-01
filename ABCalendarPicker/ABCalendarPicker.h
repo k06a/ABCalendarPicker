@@ -1,9 +1,9 @@
 //
 //  ABCalendarPicker.h
-//  CalendarPickerDemo
+//  ABCalendarPicker
 //
 //  Created by Anton Bukov on 25.06.12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 Anton Bukov. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -47,8 +47,6 @@
 @property (strong,nonatomic) id<ABCalendarPickerDataSourceProtocol> dataSource;
 /** Flag means wich side of the view should grow: bottom or top. */
 @property (nonatomic) BOOL bottomExpanding;
-/** Integer value represents maximum number of dots per day. Default value is 1. */
-@property (nonatomic) NSInteger maxNumberOfDots;
 /** Flag means is swipe enabled for navigation. */
 @property (nonatomic) BOOL swipeNavigationEnabled;
 

@@ -1,9 +1,9 @@
 //
 //  ABCalendarPickerDataSourceProtocol.h
-//  CalendarPickerDemo
+//  ABCalendarPicker
 //
-//  Created by Антон Буков on 05.07.12.
-//
+//  Created by Anton Bukov on 01.07.12.
+//  Copyright (c) 2013 Anton Bukov. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

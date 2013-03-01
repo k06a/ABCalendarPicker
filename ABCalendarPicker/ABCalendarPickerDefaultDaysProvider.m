@@ -1,9 +1,9 @@
 //
 //  ABCalendarPickerDefaultDaysProvider.m
-//  CalendarPickerDemo
+//  ABCalendarPicker
 //
 //  Created by Anton Bukov on 26.06.12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 Anton Bukov. All rights reserved.
 //
 
 #import "ABCalendarPickerDefaultDaysProvider.h"
