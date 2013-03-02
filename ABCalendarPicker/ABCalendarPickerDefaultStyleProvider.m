@@ -82,26 +82,35 @@
     return self.normalTextShadowColor;
 }
 
--(UIFont *)titleFontForNumberOfColumns:(NSInteger)columns
+- (UIFont *)titleFontForColumnTitlesVisible
 {
-    return [UIFont boldSystemFontOfSize:(columns == 0) ? 28.0f : 23.0f];
+    if (_titleFontForColumnTitlesVisible == nil)
+        _titleFontForColumnTitlesVisible = [UIFont boldSystemFontOfSize:23.0f];
+    return _titleFontForColumnTitlesVisible;
 }
 
--(UIFont *)columnFont
+- (UIFont *)titleFontForColumnTitlesInvisible
+{
+    if (_titleFontForColumnTitlesInvisible == nil)
+        _titleFontForColumnTitlesInvisible = [UIFont boldSystemFontOfSize:28.0f];
+    return _titleFontForColumnTitlesInvisible;
+}
+
+- (UIFont *)columnFont
 {
     if (_columnFont == nil)
         _columnFont = [UIFont boldSystemFontOfSize:10.0f];
     return _columnFont;
 }
 
--(UIFont *)tileTitleFont
+- (UIFont *)tileTitleFont
 {
     if (_tileTitleFont == nil)
         _tileTitleFont = [UIFont boldSystemFontOfSize:24.0];
     return _tileTitleFont;
 }
 
--(UIFont *)tileDotFont
+- (UIFont *)tileDotFont
 {
     if (_tileDotFont == nil)
         _tileDotFont = [UIFont boldSystemFontOfSize:20.0];

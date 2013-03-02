@@ -16,6 +16,8 @@
 @property (nonatomic) UIColor * textShadowColor;
 @property (nonatomic) UIImage * patternImageForGradientBar;
 
+@property (nonatomic) UIFont * titleFontForColumnTitlesVisible;
+@property (nonatomic) UIFont * titleFontForColumnTitlesInvisible;
 @property (nonatomic) UIFont * columnFont;
 @property (nonatomic) UIFont * tileTitleFont;
 @property (nonatomic) UIFont * tileDotFont;

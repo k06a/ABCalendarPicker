@@ -15,11 +15,11 @@
 @property (readonly,nonatomic) UIColor * textShadowColor;
 @property (readonly,nonatomic) UIImage * patternImageForGradientBar;
 
+@property (readonly,nonatomic) UIFont * titleFontForColumnTitlesVisible;
+@property (readonly,nonatomic) UIFont * titleFontForColumnTitlesInvisible;
 @property (readonly,nonatomic) UIFont * columnFont;
 @property (readonly,nonatomic) UIFont * tileTitleFont;
 @property (readonly,nonatomic) UIFont * tileDotFont;
-
-- (UIFont*)titleFontForNumberOfColumns:(NSInteger)columns;
 
 - (UIControl*)calendarPicker:(ABCalendarPicker*)calendarPicker
             cellViewForTitle:(NSString*)cellTitle

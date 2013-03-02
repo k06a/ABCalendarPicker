@@ -681,7 +681,9 @@
         self.titleLabel.backgroundColor = [UIColor clearColor];
         //self.titleLabel.shadowColor = [UIColor whiteColor];
         self.titleLabel.shadowOffset = CGSizeMake(0, 1);
-        self.titleLabel.font = [self.styleProvider titleFontForNumberOfColumns:self.columnLabels.count];
+        self.titleLabel.font = (self.columnLabels.count == 0)
+                             ? [self.styleProvider titleFontForColumnTitlesInvisible]
+                             : [self.styleProvider titleFontForColumnTitlesVisible];
         //self.titleLabel.textColor = [UIColor colorWithRed:59/255. green:73/255. blue:88/255. alpha:1];
         //self.titleLabel.adjustsFontSizeToFitWidth = YES;
     }
