@@ -76,6 +76,25 @@
     return self.normalTextShadowColor;
 }
 
+-(UIFont *)titleFontForNumberOfColumns:(NSInteger)columns
+{
+    return [UIFont boldSystemFontOfSize:(columns == 0) ? 28.0f : 23.0f];
+}
+
+-(UIFont *)columnFont
+{
+    return [UIFont boldSystemFontOfSize:10.0f];
+}
+
+-(UIFont *)tileTitleFont
+{
+    return [UIFont boldSystemFontOfSize:24.0];
+}
+
+-(UIFont*)tileDotFont{
+    return [UIFont boldSystemFontOfSize:20.0];
+}
+
 - (UIImage *)patternImageForGradientBar
 {
     if (_patternImageForGradientBar == nil)
@@ -279,6 +298,8 @@
     UIMyButton * button = (UIMyButton *)[self.controlsPool giveExistingOrCreateNewWith:^
     {
         UIMyButton * button = [[UIMyButton alloc] init];
+        button.tileTitleFont = self.tileTitleFont;
+        button.tileDotFont = self.tileDotFont;
         button.opaque = YES;
         button.userInteractionEnabled = NO;
         button.clipsToBounds = YES;
