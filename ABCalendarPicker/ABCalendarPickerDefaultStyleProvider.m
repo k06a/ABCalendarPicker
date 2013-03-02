@@ -18,10 +18,16 @@
 @implementation ABCalendarPickerDefaultStyleProvider
 
 @synthesize maxNumberOfDots = _maxNumberOfDots;
-
 @synthesize controlsPool = _controlsPool;
 
+@synthesize textColor = _textColor;
+@synthesize textShadowColor = _textShadowColor;
 @synthesize patternImageForGradientBar = _patternImageForGradientBar;
+
+@synthesize columnFont = _columnFont;
+@synthesize tileTitleFont = _tileTitleFont;
+@synthesize tileDotFont = _tileDotFont;
+
 @synthesize normalImage = _normalImage;
 @synthesize selectedImage = _selectedImage;
 @synthesize highlightedImage = _highlightedImage;
@@ -59,7 +65,7 @@
         return [UIImage imageNamed:name];
 }
 
-- (ABViewPool*)controlsPool
+- (ABViewPool *)controlsPool
 {
     if (_controlsPool == nil)
         _controlsPool = [[ABViewPool alloc] init];
@@ -83,16 +89,23 @@
 
 -(UIFont *)columnFont
 {
-    return [UIFont boldSystemFontOfSize:10.0f];
+    if (_columnFont == nil)
+        _columnFont = [UIFont boldSystemFontOfSize:10.0f];
+    return _columnFont;
 }
 
 -(UIFont *)tileTitleFont
 {
-    return [UIFont boldSystemFontOfSize:24.0];
+    if (_tileTitleFont == nil)
+        _tileTitleFont = [UIFont boldSystemFontOfSize:24.0];
+    return _tileTitleFont;
 }
 
--(UIFont*)tileDotFont{
-    return [UIFont boldSystemFontOfSize:20.0];
+-(UIFont *)tileDotFont
+{
+    if (_tileDotFont == nil)
+        _tileDotFont = [UIFont boldSystemFontOfSize:20.0];
+    return _tileDotFont;
 }
 
 - (UIImage *)patternImageForGradientBar
@@ -102,14 +115,7 @@
     return _patternImageForGradientBar;
 }
 
-- (void)setPatternImageForGradientBar:(UIImage *)image
-{
-    _patternImageForGradientBar = image;
-    [self.controlsPool clear];
-    [[UIMyButton stateSizeImageDict] removeAllObjects];
-}
-
-- (UIImage*)normalImage
+- (UIImage *)normalImage
 {
     if (_normalImage == nil)
         _normalImage = [[self imageNamed:@"TileNormal"] resizableImageWithCapInsets:UIEdgeInsetsMake(2,2,2,2)];
@@ -123,7 +129,7 @@
     [[UIMyButton stateSizeImageDict] removeAllObjects];
 }
 
-- (UIImage*)selectedImage
+- (UIImage *)selectedImage
 {
     if (_selectedImage == nil)
         _selectedImage = [[self imageNamed:@"TileToday"] resizableImageWithCapInsets:UIEdgeInsetsMake(13,10,13,10)];
