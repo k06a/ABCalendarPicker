@@ -839,7 +839,7 @@
     }
     
     if (state == ABCalendarPickerStateWeekdays
-        && [(id)self.dataSource respondsToSelector:@selector(calendarPicker:eventsForDate:onState:)])
+        && [(id)self.dataSource respondsToSelector:@selector(calendarPicker:numberOfEventsForDate:onState:)])
     {
         [self updateDotsForProvider:provider];
         //[self performSelector:@selector(updateDotsForProvider:) withObject:provider afterDelay:0.0];
