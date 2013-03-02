@@ -30,6 +30,18 @@
 #pragma mark -
 #pragma mark Properties section
 
+- (id)init
+{
+    self = [super init];
+    if(self)
+    {
+        _tileTitleFont = [UIFont boldSystemFontOfSize:24.0];
+        _tileDotFont = [UIFont boldSystemFontOfSize:20.0];
+    }
+    return self;
+}
+
+
 + (NSMutableDictionary *)stateSizeImageDict
 {
     static NSMutableDictionary * dict = nil;
