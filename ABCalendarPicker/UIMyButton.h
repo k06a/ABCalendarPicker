@@ -11,6 +11,8 @@
 @interface UIMyButton : UIControl
 
 @property (nonatomic) NSInteger numberOfDots;
+@property (nonatomic,strong) UIFont * tileTitleFont;
+@property (nonatomic,strong) UIFont * tileDotFont;
 
 - (NSString *)titleForState:(UIControlState)state;
 - (UIColor *)titleColorForState:(UIControlState)state;

@@ -659,6 +659,7 @@
         columnLabel.backgroundColor = [UIColor clearColor];
 		//columnLabel.shadowColor = [UIColor whiteColor];
 		columnLabel.shadowOffset = CGSizeMake(0, 1);
+        columnLabel.font = self.styleProvider.columnFont;
 		columnLabel.font = [UIFont boldSystemFontOfSize:10.0f];
         columnLabel.text = columnName;
         //columnLabel.textColor = [UIColor darkGrayColor];
@@ -680,7 +681,7 @@
         self.titleLabel.backgroundColor = [UIColor clearColor];
         //self.titleLabel.shadowColor = [UIColor whiteColor];
         self.titleLabel.shadowOffset = CGSizeMake(0, 1);
-        self.titleLabel.font = [UIFont boldSystemFontOfSize:(self.columnLabels.count == 0) ? 28.0f : 23.0f];
+        self.titleLabel.font = [self.styleProvider titleFontForNumberOfColumns:self.columnLabels.count];
         //self.titleLabel.textColor = [UIColor colorWithRed:59/255. green:73/255. blue:88/255. alpha:1];
         //self.titleLabel.adjustsFontSizeToFitWidth = YES;
     }
