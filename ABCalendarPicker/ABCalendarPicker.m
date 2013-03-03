@@ -269,6 +269,13 @@
             [self updateStateAnimated:YES];
 }
 
+- (void)setStyleProvider:(id<ABCalendarPickerStyleProviderProtocol>)styleProvider
+{
+    _styleProvider = styleProvider;
+    if (self.superview)
+        [self updateStateAnimated:YES];
+}
+
 - (void)configureArrowButton:(UIButton *)button
                     withText:(NSString *)text
                      fastTap:(SEL)fastTapSel
