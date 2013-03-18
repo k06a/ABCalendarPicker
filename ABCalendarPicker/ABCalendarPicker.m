@@ -662,7 +662,11 @@
             continue;
         
         UILabel * columnLabel = [[UILabel alloc] initWithFrame:CGRectMake(floor(j*buttonWidth),50-12,buttonWidth,12)];
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= 60000
+        columnLabel.textAlignment = NSTextAlignmentCenter;
+#else
         columnLabel.textAlignment = UITextAlignmentCenter;
+#endif
         columnLabel.backgroundColor = [UIColor clearColor];
 		//columnLabel.shadowColor = [UIColor whiteColor];
 		columnLabel.shadowOffset = CGSizeMake(0, 1);
@@ -684,7 +688,11 @@
     if (self.titleLabel == nil)
     {
         self.titleLabel = [[UILabel alloc] init];
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= 60000
+        self.titleLabel.textAlignment = NSTextAlignmentCenter;
+#else
         self.titleLabel.textAlignment = UITextAlignmentCenter;
+#endif
         self.titleLabel.backgroundColor = [UIColor clearColor];
         //self.titleLabel.shadowColor = [UIColor whiteColor];
         self.titleLabel.shadowOffset = CGSizeMake(0, 1);
