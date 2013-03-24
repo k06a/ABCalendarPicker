@@ -371,6 +371,8 @@
     }
     
     BOOL canDiffuse = [self.currentProvider canDiffuse];
+    UIControl * control = self.controls[0][0];
+    canDiffuse = canDiffuse && !control.enabled;
     ABCalendarPickerAnimation animation = [self.currentProvider animationForPrev];
     self.highlightedDate = [self.currentProvider dateForPrevAnimation];
     [self changeStateTo:self.currentState fromState:self.currentState animation:animation canDiffuse:canDiffuse];
@@ -386,6 +388,8 @@
     }
     
     BOOL canDiffuse = [self.currentProvider canDiffuse];
+    UIControl * control = [[self.controls lastObject] lastObject];
+    canDiffuse = canDiffuse && !control.enabled;
     ABCalendarPickerAnimation animation = [self.currentProvider animationForNext];
     self.highlightedDate = [self.currentProvider dateForNextAnimation];
     [self changeStateTo:self.currentState fromState:self.currentState animation:animation canDiffuse:canDiffuse];
