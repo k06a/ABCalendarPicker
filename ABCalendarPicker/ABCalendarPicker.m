@@ -1047,17 +1047,23 @@
     if (!self.swipeNavigationEnabled)
         return;
     
+    BOOL canDiffuse = [self.currentProvider canDiffuse];
+    
     ABCalendarPickerAnimation prevAnimation = [self.currentProvider animationForPrev];
     ABCalendarPickerAnimation nextAnimation = [self.currentProvider animationForNext];
     if ([self animationEq:prevAnimation toDirection:gestureRecognizer.direction])
     {
+        UIControl * control = self.controls[0][0];
+        canDiffuse = canDiffuse && !control.enabled;
         self.highlightedDate = [self.currentProvider dateForPrevAnimation];
-        [self changeStateTo:self.currentState fromState:self.currentState animation:prevAnimation canDiffuse:[self.currentProvider canDiffuse]];
+        [self changeStateTo:self.currentState fromState:self.currentState animation:prevAnimation canDiffuse:canDiffuse];
     }
     if ([self animationEq:nextAnimation toDirection:gestureRecognizer.direction])
     {
+        UIControl * control = [[self.controls lastObject] lastObject];
+        canDiffuse = canDiffuse && !control.enabled;
         self.highlightedDate = [self.currentProvider dateForNextAnimation];
-        [self changeStateTo:self.currentState fromState:self.currentState animation:nextAnimation canDiffuse:[self.currentProvider canDiffuse]];
+        [self changeStateTo:self.currentState fromState:self.currentState animation:nextAnimation canDiffuse:canDiffuse];
     }
     
     if (![(id)self.currentProvider respondsToSelector:@selector(dateForLongPrevAnimation)]
@@ -1070,13 +1076,17 @@
     ABCalendarPickerAnimation longNextAnimation = [self.currentProvider animationForLongNext];
     if ([self animationEq:longPrevAnimation toDirection:gestureRecognizer.direction])
     {
+        UIControl * control = self.controls[0][0];
+        canDiffuse = canDiffuse && !control.enabled;
         self.highlightedDate = [self.currentProvider dateForLongPrevAnimation];
-        [self changeStateTo:self.currentState fromState:self.currentState animation:longPrevAnimation canDiffuse:[self.currentProvider canDiffuse]];
+        [self changeStateTo:self.currentState fromState:self.currentState animation:longPrevAnimation canDiffuse:canDiffuse];
     }
     if ([self animationEq:longNextAnimation toDirection:gestureRecognizer.direction])
     {
+        UIControl * control = [[self.controls lastObject] lastObject];
+        canDiffuse = canDiffuse && !control.enabled;   
         self.highlightedDate = [self.currentProvider dateForLongNextAnimation];
-        [self changeStateTo:self.currentState fromState:self.currentState animation:longNextAnimation canDiffuse:[self.currentProvider canDiffuse]];
+        [self changeStateTo:self.currentState fromState:self.currentState animation:longNextAnimation canDiffuse:canDiffuse];
     }
 }
 
