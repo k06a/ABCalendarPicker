@@ -40,6 +40,7 @@
 - (void)setCalendar:(NSCalendar *)calendar
 {
     _calendar = calendar;
+    _calendar.minimumDaysInFirstWeek = 1;
     self.daysProvider.calendar = calendar;
 }
 

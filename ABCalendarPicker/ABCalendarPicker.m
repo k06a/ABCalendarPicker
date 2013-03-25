@@ -209,6 +209,8 @@
 - (void)setCalendar:(NSCalendar *)cal
 {
     _calendar = cal;
+    _calendar.minimumDaysInFirstWeek = 1;
+    
     for (id<ABCalendarPickerDateProviderProtocol> provider in self.providers)
         if (provider != (id)[NSNull null])
             [provider setCalendar:cal];
