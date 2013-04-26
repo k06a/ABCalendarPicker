@@ -26,10 +26,13 @@
     if (_store == nil)
     {
         _store = [[EKEventStore alloc] init];
-        if ([EKEventStore authorizationStatusForEntityType:(EKEntityTypeEvent)] != EKAuthorizationStatusAuthorized)
-            [_store requestAccessToEntityType:(EKEntityTypeEvent) completion:^(BOOL granted, NSError *error) {
-                ;
-            }];
+        if ([[EKEventStore class] resolveClassMethod:@selector(authorizationStatusForEntityType:)])
+        {
+            if ([EKEventStore authorizationStatusForEntityType:(EKEntityTypeEvent)] != EKAuthorizationStatusAuthorized)
+                [_store requestAccessToEntityType:(EKEntityTypeEvent) completion:^(BOOL granted, NSError *error) {
+                    ;
+                }];
+        }
     }
     return _store;
 }

@@ -290,10 +290,12 @@
     button.titleLabel.shadowOffset = CGSizeMake(0,1);
     [button setTitle:text forState:UIControlStateNormal];
     
-    [button addTarget:self action:fastTapSel forControlEvents:UIControlEventTouchUpInside];
+    UITapGestureRecognizer * tapPress = [[UITapGestureRecognizer alloc] initWithTarget:self action:fastTapSel];
     UILongPressGestureRecognizer * deepPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:deepTapSel];
     deepPress.allowableMovement = 15.0;
     deepPress.cancelsTouchesInView = NO;
+    
+    [button addGestureRecognizer:tapPress];
     [button addGestureRecognizer:deepPress];
 }
 
@@ -715,7 +717,9 @@
     if (self.titleButton == nil)
     {
         self.titleButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [self.titleButton addTarget:self action:@selector(titleClicked:) forControlEvents:UIControlEventTouchUpInside];
+        //[self.titleButton addTarget:self action:@selector(titleClicked:) forControlEvents:UIControlEventTouchUpInside];
+        UITapGestureRecognizer * recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(titleClicked:)];
+        [self.titleButton addGestureRecognizer:recognizer];
     }
     
     if (self.titleLabel.superview == nil)
@@ -1078,15 +1082,17 @@
     ABCalendarPickerAnimation longNextAnimation = [self.currentProvider animationForLongNext];
     if ([self animationEq:longPrevAnimation toDirection:gestureRecognizer.direction])
     {
-        UIControl * control = self.controls[0][0];
-        canDiffuse = canDiffuse && !control.enabled;
+        //UIControl * control = self.controls[0][0];
+        //canDiffuse = canDiffuse && !control.enabled;
+        canDiffuse = NO;
         self.highlightedDate = [self.currentProvider dateForLongPrevAnimation];
         [self changeStateTo:self.currentState fromState:self.currentState animation:longPrevAnimation canDiffuse:canDiffuse];
     }
     if ([self animationEq:longNextAnimation toDirection:gestureRecognizer.direction])
     {
-        UIControl * control = [[self.controls lastObject] lastObject];
-        canDiffuse = canDiffuse && !control.enabled;   
+        //UIControl * control = [[self.controls lastObject] lastObject];
+        //canDiffuse = canDiffuse && !control.enabled;
+        canDiffuse = NO;
         self.highlightedDate = [self.currentProvider dateForLongNextAnimation];
         [self changeStateTo:self.currentState fromState:self.currentState animation:longNextAnimation canDiffuse:canDiffuse];
     }
