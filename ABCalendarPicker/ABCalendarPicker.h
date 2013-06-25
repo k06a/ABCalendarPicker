@@ -42,9 +42,9 @@
 /// ----------------------------------------------------------------
 
 /** Delegate is needed for configuring and noticing calendars behavior. */
-@property (strong,nonatomic) id<ABCalendarPickerDelegateProtocol> delegate;
+@property (assign,nonatomic) id<ABCalendarPickerDelegateProtocol> delegate;
 /** Delegate is needed for displaying user information on calendar. */
-@property (strong,nonatomic) id<ABCalendarPickerDataSourceProtocol> dataSource;
+@property (assign,nonatomic) id<ABCalendarPickerDataSourceProtocol> dataSource;
 /** Flag means wich side of the view should grow: bottom or top. */
 @property (nonatomic) BOOL bottomExpanding;
 /** Flag means is swipe enabled for navigation. */

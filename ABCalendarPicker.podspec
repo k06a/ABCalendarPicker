@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "ABCalendarPicker"
-  s.version      = "1.1.0"
+  s.version      = "1.1.1"
   s.summary      = "Fully configurable iOS calendar UI component with multiple layouts and smooth animations."
   s.homepage     = "https://github.com/k06a/ABCalendarPicker"
   s.license      = 'MIT'
