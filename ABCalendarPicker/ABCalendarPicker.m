@@ -139,21 +139,32 @@
     NSTimeInterval interval = highlightedDate.timeIntervalSince1970;
     interval -= fmod(interval, 60);
     highlightedDate = [NSDate dateWithTimeIntervalSince1970:interval];
+    
+    if ([(id)self.delegate respondsToSelector:@selector(calendarPicker:shoudSelectDate:withState:)])
+    {
+        if (![(id)self.delegate calendarPicker:self
+                               shoudSelectDate:highlightedDate
+                                     withState:self.currentState])
+        {
+            return;
+        }
+    }
+    
     _highlightedDate = highlightedDate;
     
     if ([self providerForState:self.currentState] != nil)
         [self updateTitleForProvider:[self providerForState:self.currentState]];
     
-    if (self.currentState == ABCalendarPickerStateDays
-        || self.currentState == ABCalendarPickerStateWeekdays)
-    {
+    //if (self.currentState == ABCalendarPickerStateDays
+    //    || self.currentState == ABCalendarPickerStateWeekdays)
+    //{
         if ([(id)self.delegate respondsToSelector:@selector(calendarPicker:dateSelected:withState:)])
         {
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 [self.delegate calendarPicker:self dateSelected:self.highlightedDate withState:self.currentState];
             }];
         }
-    }
+    //}
 }
 
 - (ABViewPool*)buttonsPool
@@ -376,7 +387,8 @@
     
     BOOL canDiffuse = [self.currentProvider canDiffuse];
     UIControl * control = self.controls[0][0];
-    canDiffuse = canDiffuse && !control.enabled;
+    if (canDiffuse < 2)
+        canDiffuse = canDiffuse && !control.enabled;
     ABCalendarPickerAnimation animation = [self.currentProvider animationForPrev];
     self.highlightedDate = [self.currentProvider dateForPrevAnimation];
     [self changeStateTo:self.currentState fromState:self.currentState animation:animation canDiffuse:canDiffuse];
@@ -391,9 +403,10 @@
         return;
     }
     
-    BOOL canDiffuse = [self.currentProvider canDiffuse];
+    NSInteger canDiffuse = [self.currentProvider canDiffuse];
     UIControl * control = [[self.controls lastObject] lastObject];
-    canDiffuse = canDiffuse && !control.enabled;
+    if (canDiffuse < 2)
+        canDiffuse = canDiffuse && !control.enabled;
     ABCalendarPickerAnimation animation = [self.currentProvider animationForNext];
     self.highlightedDate = [self.currentProvider dateForNextAnimation];
     [self changeStateTo:self.currentState fromState:self.currentState animation:animation canDiffuse:canDiffuse];
@@ -1060,14 +1073,16 @@
     if ([self animationEq:prevAnimation toDirection:gestureRecognizer.direction])
     {
         UIControl * control = self.controls[0][0];
-        canDiffuse = canDiffuse && !control.enabled;
+        if (canDiffuse < 2)
+            canDiffuse = canDiffuse && !control.enabled;
         self.highlightedDate = [self.currentProvider dateForPrevAnimation];
         [self changeStateTo:self.currentState fromState:self.currentState animation:prevAnimation canDiffuse:canDiffuse];
     }
     if ([self animationEq:nextAnimation toDirection:gestureRecognizer.direction])
     {
         UIControl * control = [[self.controls lastObject] lastObject];
-        canDiffuse = canDiffuse && !control.enabled;
+        if (canDiffuse < 2)
+            canDiffuse = canDiffuse && !control.enabled;
         self.highlightedDate = [self.currentProvider dateForNextAnimation];
         [self changeStateTo:self.currentState fromState:self.currentState animation:nextAnimation canDiffuse:canDiffuse];
     }
