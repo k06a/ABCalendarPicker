@@ -180,8 +180,6 @@
     [self calendarPicker:self.calendarPicker animateNewHeight:self.calendarPicker.bounds.size.height];
 
     [self configTapped:nil];
-    
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning

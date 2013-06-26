@@ -74,12 +74,22 @@
 
 - (UIColor *)textColor
 {
-    return self.normalTextColor;
+    return [self normalTextColor];
+}
+
+- (void)setTextColor:(UIColor *)textColor
+{
+    [self setNormalTextColor:textColor];
 }
 
 - (UIColor *)textShadowColor
 {
-    return self.normalTextShadowColor;
+    return [self normalTextShadowColor];
+}
+
+- (void)setTextShadowColor:(UIColor *)textShadowColor
+{
+    [self setNormalTextShadowColor:textShadowColor];
 }
 
 - (UIFont *)titleFontForColumnTitlesVisible

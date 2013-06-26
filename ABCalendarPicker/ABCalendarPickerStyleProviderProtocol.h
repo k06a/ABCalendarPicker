@@ -11,15 +11,15 @@
 
 @protocol ABCalendarPickerStyleProviderProtocol <NSObject>
 
-@property (readonly,nonatomic) UIColor * textColor;
-@property (readonly,nonatomic) UIColor * textShadowColor;
-@property (readonly,nonatomic) UIImage * patternImageForGradientBar;
+@property (strong,nonatomic) UIColor * textColor;
+@property (strong,nonatomic) UIColor * textShadowColor;
+@property (strong,nonatomic) UIImage * patternImageForGradientBar;
 
-@property (readonly,nonatomic) UIFont * titleFontForColumnTitlesVisible;
-@property (readonly,nonatomic) UIFont * titleFontForColumnTitlesInvisible;
-@property (readonly,nonatomic) UIFont * columnFont;
-@property (readonly,nonatomic) UIFont * tileTitleFont;
-@property (readonly,nonatomic) UIFont * tileDotFont;
+@property (strong,nonatomic) UIFont * titleFontForColumnTitlesVisible;
+@property (strong,nonatomic) UIFont * titleFontForColumnTitlesInvisible;
+@property (strong,nonatomic) UIFont * columnFont;
+@property (strong,nonatomic) UIFont * tileTitleFont;
+@property (strong,nonatomic) UIFont * tileDotFont;
 
 - (UIControl*)calendarPicker:(ABCalendarPicker*)calendarPicker
             cellViewForTitle:(NSString*)cellTitle

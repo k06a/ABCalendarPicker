@@ -12,15 +12,15 @@
 
 @interface ABCalendarPickerDefaultStyleProvider : NSObject<ABCalendarPickerStyleProviderProtocol>
 
-@property (nonatomic) UIColor * textColor;
-@property (nonatomic) UIColor * textShadowColor;
-@property (nonatomic) UIImage * patternImageForGradientBar;
+@property (strong,nonatomic) UIColor * textColor;
+@property (strong,nonatomic) UIColor * textShadowColor;
+@property (strong,nonatomic) UIImage * patternImageForGradientBar;
 
-@property (nonatomic) UIFont * titleFontForColumnTitlesVisible;
-@property (nonatomic) UIFont * titleFontForColumnTitlesInvisible;
-@property (nonatomic) UIFont * columnFont;
-@property (nonatomic) UIFont * tileTitleFont;
-@property (nonatomic) UIFont * tileDotFont;
+@property (strong,nonatomic) UIFont * titleFontForColumnTitlesVisible;
+@property (strong,nonatomic) UIFont * titleFontForColumnTitlesInvisible;
+@property (strong,nonatomic) UIFont * columnFont;
+@property (strong,nonatomic) UIFont * tileTitleFont;
+@property (strong,nonatomic) UIFont * tileDotFont;
 
 - (UIControl*)calendarPicker:(ABCalendarPicker*)calendarPicker
             cellViewForTitle:(NSString*)cellTitle
@@ -32,23 +32,23 @@
             withEvents:(NSInteger)eventsCount
               andState:(ABCalendarPickerState)state;
 
-@property (nonatomic) UIImage * normalImage;
-@property (nonatomic) UIImage * selectedImage;
-@property (nonatomic) UIImage * highlightedImage;
-@property (nonatomic) UIImage * selectedHighlightedImage;
+@property (strong,nonatomic) UIImage * normalImage;
+@property (strong,nonatomic) UIImage * selectedImage;
+@property (strong,nonatomic) UIImage * highlightedImage;
+@property (strong,nonatomic) UIImage * selectedHighlightedImage;
 
-@property (nonatomic) UIColor * normalTextColor;
-@property (nonatomic) UIColor * disabledTextColor;
-@property (nonatomic) UIColor * selectedTextColor;
+@property (strong,nonatomic) UIColor * normalTextColor;
+@property (strong,nonatomic) UIColor * disabledTextColor;
+@property (strong,nonatomic) UIColor * selectedTextColor;
 
-@property (nonatomic) UIColor * normalTextShadowColor;
-@property (nonatomic) UIColor * disabledTextShadowColor;
-@property (nonatomic) UIColor * selectedTextShadowColor;
+@property (strong,nonatomic) UIColor * normalTextShadowColor;
+@property (strong,nonatomic) UIColor * disabledTextShadowColor;
+@property (strong,nonatomic) UIColor * selectedTextShadowColor;
 
-@property (nonatomic) CGSize normalTextShadowPosition;
-@property (nonatomic) CGSize disabledTextShadowPosition;
-@property (nonatomic) CGSize selectedTextShadowPosition;
+@property (assign,nonatomic) CGSize normalTextShadowPosition;
+@property (assign,nonatomic) CGSize disabledTextShadowPosition;
+@property (assign,nonatomic) CGSize selectedTextShadowPosition;
 
-@property (nonatomic) NSInteger maxNumberOfDots;
+@property (assign,nonatomic) NSInteger maxNumberOfDots;
 
 @end
