@@ -140,12 +140,14 @@
 
 - (void)setTitle:(NSString *)title forState:(UIControlState)state
 {
+    if (!title) return;
     [self.titles setObject:title forKey:[NSNumber numberWithInt:state]];
     [self setNeedsDisplay];
 }
 
 - (void)setTitleColor:(UIColor *)color forState:(UIControlState)state
 {
+    if (!color) return;
     [self.titleColors setObject:color forKey:[NSNumber numberWithInt:state]];
     if (self.state == state)
         [self setNeedsDisplay];
@@ -153,6 +155,7 @@
 
 - (void)setTitleShadowColor:(UIColor *)color forState:(UIControlState)state
 {
+    if (!color) return;
     [self.titleShadowColors setObject:color forKey:[NSNumber numberWithInt:state]];
     if (self.state == state)
         [self setNeedsDisplay];
@@ -167,6 +170,7 @@
 
 - (void)setBackgroundImage:(UIImage *)image forState:(UIControlState)state
 {
+    if (!image) return;
     [self.backgroundImages setObject:image forKey:[NSNumber numberWithInt:state]];
     if (self.state == state)
         [self setNeedsDisplay];
