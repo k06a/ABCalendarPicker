@@ -11,10 +11,11 @@
 #import "ABViewController.h"
 
 @interface ABViewController () <UITableViewDelegate,UITableViewDataSource,ABCalendarPickerDelegateProtocol,ABCalendarPickerDataSourceProtocol>
-@property (assign, nonatomic) IBOutlet ABCalendarPicker *calendarPicker;
-@property (strong, nonatomic) UIImageView * calendarShadow;
-@property (unsafe_unretained, nonatomic) IBOutlet UITableView *eventsTable;
-@property (unsafe_unretained, nonatomic) IBOutlet UIView *configPanel;
+@property (weak, nonatomic) IBOutlet ABCalendarPicker *calendarPicker;
+@property (weak, nonatomic) IBOutlet UIImageView * calendarShadow;
+@property (weak, nonatomic) IBOutlet UITableView *eventsTable;
+@property (weak, nonatomic) IBOutlet UIView *configPanel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *configPanelBottomSpace;
 
 @property (nonatomic) EKEventStore * store;
 @end
@@ -50,33 +51,16 @@
     return [self.store eventsMatchingPredicate:predicate];
 }
 
-- (UIImageView*)calendarShadow
-{
-    if (_calendarShadow == nil)
-    {
-        _calendarShadow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"CalendarShadow"]];
-        _calendarShadow.opaque = NO;
-    }
-    return _calendarShadow;
-}
-
 - (IBAction)configTapped:(id)sender
 {
-    self.view.userInteractionEnabled = NO;
-    [UIView animateWithDuration:0.3
-                          delay:0.0
-                        options:(UIViewAnimationOptionCurveEaseInOut)
-                     animations:^{
-                         CGFloat y = self.view.bounds.size.height;
-                         CGFloat delta = self.configPanel.bounds.size.height / 2;
-                         if (self.configPanel.center.y < self.view.bounds.size.height)
-                             y += delta;
-                         else
-                             y -= delta;
-                         self.configPanel.center = CGPointMake(self.configPanel.center.x, y);
-                     } completion:^(BOOL finished) {
-                         self.view.userInteractionEnabled = YES;
-                     }];
+    if (self.configPanelBottomSpace.constant == 0)
+        self.configPanelBottomSpace.constant = -self.configPanel.bounds.size.height;
+    else
+        self.configPanelBottomSpace.constant = 0;
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        [self.view layoutIfNeeded];
+    }];
 }
 
 - (IBAction)todayTapped:(id)sender
@@ -112,12 +96,14 @@
 - (void)calendarPicker:(ABCalendarPicker *)calendarPicker
       animateNewHeight:(CGFloat)height
 {
+    /*
     self.calendarShadow.frame = CGRectMake(0,CGRectGetMaxY(self.calendarPicker.frame),
                                            self.calendarPicker.frame.size.width,
                                            self.calendarShadow.frame.size.height);
     self.eventsTable.frame = CGRectMake(0, CGRectGetMaxY(self.calendarPicker.frame),
                                         self.eventsTable.bounds.size.width,
                                         self.view.bounds.size.height - self.calendarPicker.bounds.size.height);
+     */
 }
 
 - (NSInteger)calendarPicker:(ABCalendarPicker*)calendarPicker
@@ -171,15 +157,11 @@
 {
     [super viewDidLoad];
     
-    self.eventsTable.delegate = self;
-    self.eventsTable.dataSource = self;
-    
     self.calendarPicker.delegate = self;
     self.calendarPicker.dataSource = self;
-    [self.view addSubview:self.calendarShadow];
     [self calendarPicker:self.calendarPicker animateNewHeight:self.calendarPicker.bounds.size.height];
 
-    [self configTapped:nil];
+    //[self configTapped:nil];
 }
 
 - (void)didReceiveMemoryWarning

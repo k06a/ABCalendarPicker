@@ -1237,9 +1237,15 @@
     {
         CGFloat oldFrameHeight = self.frame.size.height;
         self.frame = CGRectMake(self.frame.origin.x,
-                                self.bottomExpanding ? self.frame.origin.y : (oldFrameBottom - newFrameHeight), 
+                                self.bottomExpanding ? self.frame.origin.y : (oldFrameBottom - newFrameHeight),
                                 self.frame.size.width,
                                 newFrameHeight);
+        if (self.constraints.count > 0) {
+            for (NSLayoutConstraint *constraint in self.constraints)
+                if (constraint.firstAttribute == NSLayoutAttributeHeight)
+                    constraint.constant = newFrameHeight;
+            [self.superview layoutIfNeeded];
+        }
         self.mainTileView.frame = CGRectMake(0,50,self.frame.size.width,self.frame.size.height-50);
         if (oldFrameHeight != newFrameHeight)
         {
@@ -1393,6 +1399,12 @@
                             self.bottomExpanding ? self.frame.origin.y : (oldFrameBottom - newFrameHeight),
                             self.frame.size.width,
                             newFrameHeight);
+    if (self.constraints.count > 0) {
+        for (NSLayoutConstraint *constraint in self.constraints)
+            if (constraint.firstAttribute == NSLayoutAttributeHeight)
+                constraint.constant = newFrameHeight;
+        [self.superview layoutIfNeeded];
+    }
     self.mainTileView.frame = CGRectMake(0,50,self.frame.size.width,self.frame.size.height-50);
     if (oldFrameHeight != newFrameHeight)
     {

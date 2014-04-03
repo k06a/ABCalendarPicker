@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="7f3-Qm-BvJ">
+    <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller - ABCalendarPicker-->
+        <scene sceneID="fgF-6I-UpJ">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Sv0-jo-7j7" customClass="ABViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QRb-MQ-ROD"/>
+                        <viewControllerLayoutGuide type="bottom" id="z6V-3i-HTj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Tu4-lF-PuP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aWr-mf-3ZQ" customClass="ABCalendarPicker">
+                                <rect key="frame" x="0.0" y="64" width="320" height="240"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="JTx-iX-bfw"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="240" id="qhh-wN-2cY"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="vOp-ti-03y">
+                                <rect key="frame" x="0.0" y="304" width="320" height="264"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Sv0-jo-7j7" id="3sU-vl-JqM"/>
+                                    <outlet property="delegate" destination="Sv0-jo-7j7" id="KSH-UY-y90"/>
+                                </connections>
+                            </tableView>
+                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CalendarShadow.png" translatesAutoresizingMaskIntoConstraints="NO" id="dRQ-p1-0Th">
+                                <rect key="frame" x="0.0" y="304" width="320" height="11"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="11" id="MJk-wF-YKI"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="11" id="sld-0u-6RG"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w1M-Vt-d6t">
+                                <rect key="frame" x="0.0" y="462" width="320" height="106"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="6" translatesAutoresizingMaskIntoConstraints="NO" id="lI7-iV-kLk">
+                                        <rect key="frame" x="20" y="20" width="280" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="DCj-Eg-Bi0"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="Mon"/>
+                                            <segment title="Tue"/>
+                                            <segment title="Wed"/>
+                                            <segment title="Thu"/>
+                                            <segment title="Fri"/>
+                                            <segment title="Sat"/>
+                                            <segment title="Sun"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="firstWeekdayChange:" destination="Sv0-jo-7j7" eventType="valueChanged" id="PV0-Ew-pF9"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="Rw1-pc-d61">
+                                        <rect key="frame" x="164" y="57" width="136" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="AbY-SW-wB0"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="1 week"/>
+                                            <segment title="3 weeks"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="threeWeekChanged:" destination="Sv0-jo-7j7" eventType="valueChanged" id="sJM-pJ-nVS"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="MXt-WZ-d8W">
+                                        <rect key="frame" x="20" y="57" width="136" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="Ttf-09-alL"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="12 months"/>
+                                            <segment title="15 months"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="monthGridChange:" destination="Sv0-jo-7j7" eventType="valueChanged" id="6ze-oK-8mm"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                                <color key="backgroundColor" red="0.6588235294" green="0.91372549020000005" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Rw1-pc-d61" firstAttribute="leading" secondItem="MXt-WZ-d8W" secondAttribute="trailing" constant="8" id="9kS-kk-8qn"/>
+                                    <constraint firstAttribute="width" constant="320" id="GSt-85-WNM"/>
+                                    <constraint firstItem="lI7-iV-kLk" firstAttribute="leading" secondItem="w1M-Vt-d6t" secondAttribute="leading" constant="20" id="KRy-gy-gU2"/>
+                                    <constraint firstItem="MXt-WZ-d8W" firstAttribute="leading" secondItem="w1M-Vt-d6t" secondAttribute="leading" constant="20" id="Zxz-AY-9KQ"/>
+                                    <constraint firstAttribute="height" constant="106" id="a67-fL-Y0z"/>
+                                    <constraint firstItem="lI7-iV-kLk" firstAttribute="top" secondItem="w1M-Vt-d6t" secondAttribute="top" constant="20" id="atT-Bk-reN"/>
+                                    <constraint firstAttribute="bottom" secondItem="Rw1-pc-d61" secondAttribute="bottom" constant="21" id="gMb-um-yez"/>
+                                    <constraint firstItem="Rw1-pc-d61" firstAttribute="width" secondItem="MXt-WZ-d8W" secondAttribute="width" id="knd-Jw-rTv"/>
+                                    <constraint firstAttribute="trailing" secondItem="lI7-iV-kLk" secondAttribute="trailing" constant="20" id="pvY-7L-5zr"/>
+                                    <constraint firstAttribute="bottom" secondItem="MXt-WZ-d8W" secondAttribute="bottom" constant="21" id="z9u-CI-FIN"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dRQ-p1-0Th" firstAttribute="top" secondItem="aWr-mf-3ZQ" secondAttribute="bottom" id="9Mw-fE-oxz"/>
+                            <constraint firstAttribute="trailing" secondItem="dRQ-p1-0Th" secondAttribute="trailing" id="A1g-Ct-Bbf"/>
+                            <constraint firstItem="dRQ-p1-0Th" firstAttribute="leading" secondItem="Tu4-lF-PuP" secondAttribute="leading" id="Bbc-xv-9Z5"/>
+                            <constraint firstAttribute="trailing" secondItem="w1M-Vt-d6t" secondAttribute="trailing" id="FUp-Tc-Asq"/>
+                            <constraint firstItem="vOp-ti-03y" firstAttribute="top" secondItem="aWr-mf-3ZQ" secondAttribute="bottom" id="Mxg-ci-dUg"/>
+                            <constraint firstItem="z6V-3i-HTj" firstAttribute="top" secondItem="vOp-ti-03y" secondAttribute="bottom" id="PmW-0n-QNS"/>
+                            <constraint firstItem="aWr-mf-3ZQ" firstAttribute="top" secondItem="QRb-MQ-ROD" secondAttribute="bottom" id="SGY-Ol-3tk"/>
+                            <constraint firstAttribute="trailing" secondItem="aWr-mf-3ZQ" secondAttribute="trailing" id="dPM-tB-YC7"/>
+                            <constraint firstItem="w1M-Vt-d6t" firstAttribute="leading" secondItem="Tu4-lF-PuP" secondAttribute="leading" id="dR0-2r-Edp"/>
+                            <constraint firstItem="aWr-mf-3ZQ" firstAttribute="leading" secondItem="Tu4-lF-PuP" secondAttribute="leading" id="jMf-3F-j78"/>
+                            <constraint firstAttribute="bottom" secondItem="w1M-Vt-d6t" secondAttribute="bottom" id="lTl-iE-qJu"/>
+                            <constraint firstAttribute="trailing" secondItem="vOp-ti-03y" secondAttribute="trailing" id="nbj-ej-6z1"/>
+                            <constraint firstItem="vOp-ti-03y" firstAttribute="leading" secondItem="Tu4-lF-PuP" secondAttribute="leading" id="wHI-PU-ppM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="ABCalendarPicker" id="U7U-tM-f3t">
+                        <barButtonItem key="leftBarButtonItem" title="Today" id="bjU-Vy-JIb">
+                            <connections>
+                                <action selector="todayTapped:" destination="Sv0-jo-7j7" id="qOe-fg-NH8"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="Rfi-1J-gDh">
+                            <connections>
+                                <action selector="configTapped:" destination="Sv0-jo-7j7" id="fzO-xV-0dD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="calendarPicker" destination="aWr-mf-3ZQ" id="zoa-T7-pDM"/>
+                        <outlet property="calendarShadow" destination="dRQ-p1-0Th" id="Vd3-nB-Lb9"/>
+                        <outlet property="configPanel" destination="w1M-Vt-d6t" id="rb1-Ln-3J2"/>
+                        <outlet property="configPanelBottomSpace" destination="PmW-0n-QNS" id="Y3K-pY-6Bk"/>
+                        <outlet property="eventsTable" destination="vOp-ti-03y" id="dpL-pS-vEK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mHi-F2-jJ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="679" y="-7"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="alD-fS-p82">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7f3-Qm-BvJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LwH-rl-cyv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Sv0-jo-7j7" kind="relationship" relationship="rootViewController" id="gBB-a5-mcX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aq3-hM-Txt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="152" y="-7"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="CalendarShadow.png" width="1" height="11"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
