@@ -71,20 +71,20 @@
 }
 - (ABCalendarPickerAnimation)animationForZoomOutToProvider:(id<ABCalendarPickerDateProviderProtocol>)provider {
     NSInteger weekNumber = [self.calendar ordinalityOfUnit:NSWeekCalendarUnit inUnit:NSMonthCalendarUnit forDate:[self.dateOwner highlightedDate]];
-    return ABCalendarPickerAnimationScrollUpOrDownBase - weekNumber;
+    return (ABCalendarPickerAnimation)(ABCalendarPickerAnimationScrollUpOrDownBase - weekNumber);
 }
 
 - (NSDate*)dateForPrevAnimation
 {
     NSDateComponents * components = [[NSDateComponents alloc] init];
-    components.week = -1;
+    components.weekOfYear = -1;
     return [self.calendar dateByAddingComponents:components toDate:[self.dateOwner highlightedDate] options:0];
 }
 
 - (NSDate*)dateForNextAnimation
 {
     NSDateComponents * components = [[NSDateComponents alloc] init];
-    components.week = 1;
+    components.weekOfYear = 1;
     return [self.calendar dateByAddingComponents:components toDate:[self.dateOwner highlightedDate] options:0];
 }
 
@@ -124,7 +124,7 @@
 - (NSString*)labelForDate:(NSDate*)date
 {
     NSUInteger day = [self.calendar ordinalityOfUnit:NSDayCalendarUnit inUnit:NSMonthCalendarUnit forDate:date];
-    return [NSString stringWithFormat:@"%d", day, nil];
+    return [NSString stringWithFormat:@"%@", @(day), nil];
 }
 
 - (UIControlState)controlStateForDate:(NSDate*)date

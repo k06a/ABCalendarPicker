@@ -19,24 +19,14 @@
 
 @implementation UIMyButton
 
-@synthesize numberOfDots = _numberOfDots;
-
-@synthesize titles = _titles;
-@synthesize titleColors = _titleColors;
-@synthesize titleShadowColors = _titleShadowColors;
-@synthesize titleShadowOffsets = _titleShadowOffsets;
-@synthesize backgroundImages = _backgroundImages;
-
 #pragma mark -
 #pragma mark Properties section
 
 - (id)init
 {
-    self = [super init];
-    if(self)
-    {
-        _tileTitleFont = [UIFont boldSystemFontOfSize:24.0];
-        _tileDotFont = [UIFont boldSystemFontOfSize:20.0];
+    if (self = [super init]) {
+        self.tileTitleFont = [UIFont systemFontOfSize:24.0];
+        self.tileDotFont = [UIFont systemFontOfSize:10.0];
     }
     return self;
 }
@@ -187,18 +177,17 @@
     CGSize titleShadowOffset = [self titleShadowOffsetForState:self.state];
     //UIImage * backgroundImage = [self backgroundImageForState:self.state];
     //UIEdgeInsets capInsects = [self backgroundImageCapInsetsForState:self.state];
-    NSString * dotsText = [@"" stringByPaddingToLength:self.numberOfDots withString:@"•" startingAtIndex:0];
+    NSString * dotsText = [@"" stringByPaddingToLength:self.numberOfDots withString:@"∙" startingAtIndex:0];
     
-    UIFont * titleFont = self.tileTitleFont;
-    UIFont * dotsFont = self.tileDotFont;
-    
-    CGSize titleSize = [titleText sizeWithFont:titleFont];
-    CGSize dotsSize = [dotsText sizeWithFont:dotsFont];
+    CGSize titleSize = [titleText sizeWithAttributes:@{NSFontAttributeName:self.tileTitleFont}];
+    CGSize dotsSize = [dotsText sizeWithAttributes:@{NSFontAttributeName:self.tileDotFont}];
+    dotsSize.width *= 0.7;
+    dotsSize.height *= 0.7;
     
     CGPoint titlePoint = CGPointMake((self.bounds.size.width - titleSize.width)/2,
                                      (self.bounds.size.height - titleSize.height)/2);
-    CGPoint dotsPoint = CGPointMake((self.bounds.size.width - dotsSize.width)/2,
-                                    self.bounds.size.height*3/5);
+    CGPoint dotsPoint = CGPointMake((self.bounds.size.width - dotsSize.width)/0.7/2,
+                                    self.bounds.size.height/0.7*65/100);
     
     /*
     if (self.state == UIControlStateNormal || self.state == UIControlStateDisabled)
@@ -224,12 +213,16 @@
     }
     */
 
-    [titleColor set];
-    CGContextSetShadowWithColor(UIGraphicsGetCurrentContext(), titleShadowOffset, 0.0, titleShadowColor.CGColor);
+    NSShadow *shadow = [[NSShadow alloc] init];
+    shadow.shadowOffset = titleShadowOffset;
+    shadow.shadowBlurRadius = 0;
+    shadow.shadowColor = titleShadowColor;
     
-    [titleText drawAtPoint:titlePoint withFont:titleFont];
-    if (self.numberOfDots > 0)
-        [dotsText drawAtPoint:dotsPoint withFont:dotsFont];
+    [titleText drawAtPoint:titlePoint withAttributes:@{NSFontAttributeName:self.tileTitleFont, NSForegroundColorAttributeName:titleColor, NSShadowAttributeName:shadow}];
+    if (self.numberOfDots > 0) {
+        CGContextScaleCTM(UIGraphicsGetCurrentContext(), 0.7, 0.7);
+        [dotsText drawAtPoint:dotsPoint withAttributes:@{NSFontAttributeName:self.tileDotFont, NSForegroundColorAttributeName:titleColor, NSShadowAttributeName:shadow}];
+    }
 }
 
 - (void)layoutSubviews

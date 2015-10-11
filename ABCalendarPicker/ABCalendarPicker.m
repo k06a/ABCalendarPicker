@@ -385,7 +385,7 @@
         return;
     }
     
-    BOOL canDiffuse = [self.currentProvider canDiffuse];
+    NSInteger canDiffuse = [self.currentProvider canDiffuse];
     UIControl * control = self.controls[0][0];
     if (canDiffuse < 2)
         canDiffuse = canDiffuse && !control.enabled;
@@ -1066,7 +1066,7 @@
     if (!self.swipeNavigationEnabled)
         return;
     
-    BOOL canDiffuse = [self.currentProvider canDiffuse];
+    NSInteger canDiffuse = [self.currentProvider canDiffuse];
     
     ABCalendarPickerAnimation prevAnimation = [self.currentProvider animationForPrev];
     ABCalendarPickerAnimation nextAnimation = [self.currentProvider animationForNext];

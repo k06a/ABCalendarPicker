@@ -72,7 +72,7 @@
     NSDate * firstDate = [self dateForRow:0 andColumn:0];
     NSInteger firstYear = [self.calendar ordinalityOfUnit:NSYearCalendarUnit inUnit:NSEraCalendarUnit forDate:firstDate];
     NSInteger lastYear = firstYear + [self rowsCount]*[self columnsCount]*20 - 1;
-    return [NSString stringWithFormat:@"%d - %d вв", firstYear/20, lastYear/20, nil];
+    return [NSString stringWithFormat:@"%@ - %@ вв", @(firstYear/20), @(lastYear/20), nil];
 }
 
 - (NSDate*)dateForRow:(NSInteger)row
@@ -92,7 +92,7 @@
 - (NSString*)labelForDate:(NSDate*)date
 {
     NSInteger year = [self.calendar ordinalityOfUnit:NSYearCalendarUnit inUnit:NSEraCalendarUnit forDate:date];
-    return [NSString stringWithFormat:@"%d-%d",(year/20)+1,(year/20)+19,nil];
+    return [NSString stringWithFormat:@"%@-%@",@((year/20)+1),@((year/20)+19),nil];
 }
 
 - (UIControlState)controlStateForDate:(NSDate*)date

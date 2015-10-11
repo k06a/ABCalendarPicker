@@ -26,28 +26,28 @@
 - (NSString*)winterLabel
 {
     if (_winterLabel == nil)
-        _winterLabel = [@"ru" isEqualToString:[[NSLocale preferredLanguages] objectAtIndex:0]] ? @"Зима" : @"Winter";
+        _winterLabel = [[NSLocale preferredLanguages].firstObject rangeOfString:@"ru"].location != NSNotFound ? @"Зима" : @"Winter";
     return _winterLabel;
 }
 
 - (NSString*)springLabel
 {
     if (_springLabel == nil)
-        _springLabel = [@"ru" isEqualToString:[[NSLocale preferredLanguages] objectAtIndex:0]] ? @"Весна" : @"Spring";
+        _springLabel = [[NSLocale preferredLanguages].firstObject rangeOfString:@"ru"].location != NSNotFound ? @"Весна" : @"Spring";
     return _springLabel;
 }
 
 - (NSString*)summerLabel
 {
     if (_summerLabel == nil)
-        _summerLabel = [@"ru" isEqualToString:[[NSLocale preferredLanguages] objectAtIndex:0]] ? @"Лето" : @"Summer";
+        _summerLabel = [[NSLocale preferredLanguages].firstObject rangeOfString:@"ru"].location != NSNotFound ? @"Лето" : @"Summer";
     return _summerLabel;
 }
 
 - (NSString*)autumnLabel
 {
     if (_autumnLabel == nil)
-        _autumnLabel = [@"ru" isEqualToString:[[NSLocale preferredLanguages] objectAtIndex:0]] ? @"Осень" : @"Autumn";
+        _autumnLabel = [[NSLocale preferredLanguages].firstObject rangeOfString:@"ru"].location != NSNotFound ? @"Осень" : @"Autumn";
     return _autumnLabel;
 }
 
@@ -122,7 +122,7 @@
 - (NSString*)titleText
 {
     NSInteger year = [self.calendar ordinalityOfUnit:NSYearCalendarUnit inUnit:NSEraCalendarUnit forDate:[self.dateOwner highlightedDate]];
-    return [NSString stringWithFormat:@"%d",year,nil];
+    return [NSString stringWithFormat:@"%@",@(year),nil];
 }
 
 - (NSDate*)dateForRow:(NSInteger)row 

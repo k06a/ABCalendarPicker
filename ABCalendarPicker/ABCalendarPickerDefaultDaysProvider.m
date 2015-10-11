@@ -155,7 +155,7 @@
 - (NSString*)labelForDate:(NSDate*)date
 {
     NSUInteger day = [self.calendar ordinalityOfUnit:NSDayCalendarUnit inUnit:NSMonthCalendarUnit forDate:date];
-    return [NSString stringWithFormat:@"%d", day, nil];
+    return [NSString stringWithFormat:@"%@", @(day), nil];
 }
 
 - (UIControlState)controlStateForDate:(NSDate*)date
