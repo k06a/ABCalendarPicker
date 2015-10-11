@@ -25,12 +25,12 @@
 - (id)init
 {
     if (self = [super init]) {
-        self.tileTitleFont = [UIFont systemFontOfSize:24.0];
-        self.tileDotFont = [UIFont systemFontOfSize:10.0];
+        CGFloat k = ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) ? 2.0 : 1.0;
+        self.tileTitleFont = [UIFont systemFontOfSize:24.0*k];
+        self.tileDotFont = [UIFont systemFontOfSize:20.0*k];
     }
     return self;
 }
-
 
 + (NSMutableDictionary *)stateSizeImageDict
 {

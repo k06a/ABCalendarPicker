@@ -115,15 +115,19 @@
 
 - (UIFont *)tileTitleFont
 {
-    if (_tileTitleFont == nil)
-        _tileTitleFont = [UIFont boldSystemFontOfSize:24.0];
+    if (_tileTitleFont == nil) {
+        CGFloat k = ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) ? 2.0 : 1.0;
+        _tileTitleFont = [UIFont boldSystemFontOfSize:24.0*k];
+    }
     return _tileTitleFont;
 }
 
 - (UIFont *)tileDotFont
 {
-    if (_tileDotFont == nil)
-        _tileDotFont = [UIFont boldSystemFontOfSize:20.0];
+    if (_tileDotFont == nil) {
+        CGFloat k = ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) ? 2.0 : 1.0;
+        _tileDotFont = [UIFont boldSystemFontOfSize:20.0*k];
+    }
     return _tileDotFont;
 }
 
